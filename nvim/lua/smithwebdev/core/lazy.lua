@@ -24,4 +24,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require'lazy'.setup({
-  })
+  {
+    {import = 'smithwebdev.plugins'},
+  },
+},{
+  checker = {
+    enabled = true,
+    notify = false
+  },
+  change_detection = {
+    enabled = true,
+    notify = false
+  },
+})
