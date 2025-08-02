@@ -1,2 +1,3 @@
-require("smithwebdev.core.keybinds")
-require("smithwebdev.core.settings")
+require "smithwebdev.core.keybinds"
+require "smithwebdev.core.settings"
+require "smithwebdev.core.autocmds"
