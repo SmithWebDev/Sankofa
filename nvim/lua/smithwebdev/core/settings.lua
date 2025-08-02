@@ -1,5 +1,3 @@
-print("SmithWebDev Settings Loaded")
-
 ---[[---------------------------------------]]---
 --                 SmithWebDev                 --
 --                  Settings                   --
