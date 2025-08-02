@@ -112,22 +112,6 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePre" }, {
 })
 
 --------------------------------------------------------------------------------
---                        Automatic Directory Creation                        --
---------------------------------------------------------------------------------
---vim.api.nvim_create_autocmd({ "VimEnter", "BufNewFile" }, {
---	pattern = "*",
---	--group = AutoSaveGroup,
---	callback = function()
---		local dirname = vim.fn.expand("%:h")
---
---		if vim.fn.isdirectory(dirname) == 0 then
---			vim.fn.mkdir(dirname)
---			print(vim.fn.expand("%:h") .. " directory created.")
---		end
---	end,
---})
---
---------------------------------------------------------------------------------
 --                         Cursorline in Normal mode                          --
 --------------------------------------------------------------------------------
 
