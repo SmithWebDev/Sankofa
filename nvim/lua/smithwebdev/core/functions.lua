@@ -59,3 +59,58 @@ function PluginRepoUrl(url)
 end
 
 _G.Plugin = PluginRepoUrl
+
+--------------------------------------------------------------------------------
+--- Custom call for plugins
+--------------------------------------------------------------------------------
+
+--- Helper function to abstract the Plugin and table.insert calls
+--- @param url string
+--- @param options table|nil
+local function add(url, opts)
+  -- use global variable Plugin from core.functions
+  local plugin_repo = Plugin(url)
+
+  if plugin_repo then
+
+    -- Returns the standard `User/Repo` format
+    local plugin_spec = { plugin_repo }
+
+    if opts then
+      for k, v in pairs(opts) do
+        plugin_spec[k] = v
+      end
+    end
+
+    -- Insert the constructed plugin specification into the main 'plugins' table
+    table.insert(plugins, plugin_spec)
+  else
+    print("Warning: Could not extract user/repo for plugin from URL: " .. url)
+  end
+end
+
+--- @param urls string|table
+--- @return single|table
+local function deps_from_urls(urls)
+  if type(urls) == "string" then
+
+    -- If a single URL, process it and returns the standard "user/repo" format
+    return Plugin(urls)
+  elseif type(urls) == "table" then
+
+    --if a table of URLs, iterate and properly process to the standard format
+    local processed_deps = {}
+    for _, dep_url in ipairs(urls) do
+      local repo_dep = Plugin(dep_url)
+      if repo_dep then
+        table.insert(processed_deps, repo_dep)
+      else
+    print("Warning: Could not extract user/repo for dependency from URL: " .. url)
+      end
+    end
+    return processed_deps
+  end
+  return nil
+end
+_G.add = add
+
