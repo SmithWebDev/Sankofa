@@ -23,17 +23,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require'lazy'.setup({
+require('smithwebdev.core.utils.plugin_helpers')
+require("smithwebdev.plugins")
+
+require'lazy'.setup(
+  SankofaPlugins.get_all_plugins(),
   {
-    {import = 'smithwebdev.plugins'},
-  },
-},{
-  checker = {
-    enabled = true,
-    notify = false
-  },
-  change_detection = {
-    enabled = true,
-    notify = false
-  },
-})
+    checker = {
+      enabled = true,
+      notify = true
+    },
+    change_detection = {
+      enabled = true,
+      notify = false
+    }
+  }
+)
