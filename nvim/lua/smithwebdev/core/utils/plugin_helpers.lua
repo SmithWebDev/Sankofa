@@ -11,7 +11,7 @@ local function PluginRepoUrl(url)
   -- match url pattern
   -- create regex for user and repo name
   local pattern = "github%.com/[^/]+/[^/]+"
-  local match_start, match_end = string.find(url, pattern)
+  local match_start, match_end = string.find(clean_url, pattern)
 
   if match_start then
 
@@ -50,7 +50,7 @@ function SankofaPlugins.add(url, opts)
     end
     table.insert(SankofaPlugins._plugin_specs, plugin_spec)
   else
-    print("Warning: Could not extract user/repo for plugin from URL: " .. url)
+    vim.notify("Warning: Could not extract user/repo for plugin from URL: " .. url)
   end
 end
 
@@ -67,7 +67,7 @@ function SankofaPlugins.deps_from_urls(urls)
       if user_repo_dep then
         table.insert(processed_deps, user_repo_dep)
       else
-        print("Warning: Could not extract user/repo for dependency from URL: " .. dep_url)
+        vim.notify("Warning: Could not extract user/repo for dependency from URL: " .. dep_url)
       end
     end
     return processed_deps
