@@ -2,6 +2,7 @@
 --                 SmithWebDev                 --
 --                   Keymaps                   --
 ---[[---------------------------------------]]---
+local keybind_helpers = require('smithwebdev.core.utils.keybind_helpers')
 
 --[[ Map Leader ]]
 --------------------------------------------------------------
@@ -160,21 +161,14 @@ vim.keymap.set("n", "<leader><leader>cyr", ":!yarn remove<Space>", { desc = "Yar
 vim.keymap.set("n", "<leader><leader>ct", ":!touch<Space>", { desc = "Touch cli command", silent = true })
 
 --[[---------------------------------------]]
----
 --                 SmithWebDev             --
---                   Commands              --
---[[---------------------------------------]]
--- vim.api.nvim_create_user_command('SayHello', 'echo "Hello World!"', {'bang': v:true})
-
---[[---------------------------------------]]
----
---                 SmithWebDev                --
---                   Macros                   --
+--                 CustomBinds             --
 --[[---------------------------------------]]
 
--- vim.keymap.set(
---   "n",
---   "<leader>mh",
---   "pF/Ä˝5;ly$I'', --Hp",
---   { desc = "macro: reduces url to 'github_user/github_repo', silent = true  format" }
--- )
+vim.keymap.set('n', 'gf', function()
+  keybind_helpers.smart_gf()
+end, {
+desc = 'Go to file (smart create)',
+noremap = true,
+silent = true
+})
