@@ -34,15 +34,8 @@ function M.smart_gf()
 
   local directory = vim.fn.fnamemodify(final_path, ':h')
 
-  -- Check if the directory exists and create it if necessary.
-  local directory_stat = vim.uv.fs_stat(directory)
-  if not directory_stat then
-    vim.uv.fs_mkdir(directory, { recursive = true }, function(err)
-      if err then
-        vim.notify("Failed to create directory: " .. err, vim.log.levels.ERROR)
-      end
-    end)
-  end
+-- Use vim.fn.mkdir with the 'p' flag to create parent directories recursively.
+  vim.fn.mkdir(directory, "p")
 
   -- Check if the file exists.
   local file_stat = vim.uv.fs_stat(final_path)
