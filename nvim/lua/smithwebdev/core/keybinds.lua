@@ -76,7 +76,8 @@ vim.keymap.set("n", "<leader>L", "<C-w>L", { desc = "Move Pane Right", silent = 
 --[[ Source file ]]
 -------------------------------------------------------------
 vim.keymap.set("n", "<leader><leader>s%", ":so %<CR>", { desc = "Source current file", silent = true })
-vim.keymap.set("n", "<leader><leader>so", ":restart<CR>", { desc = "Restart Neovim", silent = true })
+vim.keymap.set("n", "<leader><leader>so", ":source ~/.config/nvim/init.lua<CR>", { desc = "Restart Neovim", silent = true })
+-- vim.keymap.set("n", "<leader><leader>so", ":restart<CR>", { desc = "Restart Neovim", silent = true })
 
 
 --[[ Tabs ]]
@@ -160,10 +161,10 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader><leader>cyr", ":!yarn remove<Space>", { desc = "Yarn remove command", silent = true })
 vim.keymap.set("n", "<leader><leader>ct", ":!touch<Space>", { desc = "Touch cli command", silent = true })
 
---[[---------------------------------------]]
---                 SmithWebDev             --
---                 CustomBinds             --
---[[---------------------------------------]]
+--[[---------------------------------------]]--
+--                 SmithWebDev               --
+--                 CustomBinds               --
+--[[---------------------------------------]]--
 
 vim.keymap.set('n', 'gf', function()
   keybind_helpers.smart_gf()
