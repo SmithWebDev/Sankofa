@@ -25,3 +25,10 @@ SankofaPlugins.add("https://github.com/nvim-telescope/telescope.nvim", {
   config = function()
     require'smithwebdev.plugins.navigation.telescope'
   end })
+--- TUI Integration
+SankofaPlugins.add("https://github.com/kdheepak/lazygit.nvim", {
+  keys = { "<leader>gl" },
+  config = function()
+    vim.keymap.set('n', '<leader>gl', "<cmd>LazyGit<cr>", {desc = 'LazyGit'})
+  end
+})
