@@ -8,7 +8,8 @@
   frameworks
 - does not include the typical localleader at this time
 
-## NVIM CONFIG PLUGIN LIST
+
+## PLUGIN LIST
 
 ### Colorschemes
 - [pastelnight.nvim](https://github.com/pauchiner/pastelnight.nvim)
@@ -22,6 +23,7 @@
 
 ### Navigation Plugins
 - [demicolon.nvim](https://github.com/mawkler/demicolon.nvim) - Adds diagnostic and textobject jumps with the default jump keys (;/,)
+- [fyler.nvim](https://github.com/A7Lavinraj/fyler.nvim) - [WIP]
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Highly extendable fuzzy finder over lists.
 - [which-key.nvim](https://github.com/folke/which-key.nvim) - Helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type
 
