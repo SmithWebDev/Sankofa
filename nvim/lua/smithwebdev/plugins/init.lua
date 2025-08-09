@@ -54,7 +54,7 @@ SankofaPlugins.add(
     build = "make install_jsregexp",
     version = "v2.*",
     config = function()
-      -- require("smithwebdev.plugins.completion_snippets.luasnip")
+      require("smithwebdev.plugins.completion_snippets.luasnip")
     end,
   }
 )
