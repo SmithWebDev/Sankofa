@@ -73,6 +73,19 @@ SankofaPlugins.add(
   }
 )
 
+-- SankofaPlugins.add(
+--   "https://github.com/stevearc/oil.nvim", {
+--     dependencies = SankofaPlugins.deps_from_urls({
+--       "https://github.com/nvim-tree/nvim-web-devicons" 
+--     }),
+--     keys = { "-" },
+--     lazy = true,
+--     config = function()
+--       require'smithwebdev.plugins.navigation.oil'
+--     end
+--   }
+-- )
+
 --- TUI Integration
 SankofaPlugins.add("https://github.com/kdheepak/lazygit.nvim", {
   keys = { "<leader>gl" },
