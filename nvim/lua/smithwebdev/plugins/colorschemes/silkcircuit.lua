@@ -22,4 +22,3 @@ require("silkcircuit").setup({
     -- See :h silkcircuit-integrations for full list
   },
 })
-vim.cmd[[colo silkcircuit]]
