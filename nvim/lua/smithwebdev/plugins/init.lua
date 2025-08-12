@@ -106,19 +106,6 @@ SankofaPlugins.add(
   }
 )
 
--- SankofaPlugins.add(
---   "https://github.com/stevearc/oil.nvim", {
---     dependencies = SankofaPlugins.deps_from_urls({
---       "https://github.com/nvim-tree/nvim-web-devicons" 
---     }),
---     keys = { "-" },
---     lazy = true,
---     config = function()
---       require'smithwebdev.plugins.navigation.oil'
---     end
---   }
--- )
-
 SankofaPlugins.add(
   "https://github.com/nvim-telescope/telescope.nvim", {
     lazy = true,
