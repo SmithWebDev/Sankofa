@@ -86,7 +86,6 @@ SankofaPlugins.add(
   }
 )
 
-
 --- Navigation Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add("https://github.com/mawkler/demicolon.nvim")
@@ -124,6 +123,16 @@ SankofaPlugins.add(
   "https://github.com/folke/which-key.nvim", {
     config = function()
       require'which-key'.setup()
+    end
+  }
+)
+
+--- Plugin Packages
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/folke/snacks.nvim", {
+    config = function()
+      require'smithwebdev.plugins.packages.snacks'
     end
   }
 )
