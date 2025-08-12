@@ -50,6 +50,33 @@ SankofaPlugins.add(
 --- Completion & Snippets
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/mattn/emmet-vim", {
+    init = function()
+      vim.g.user_emmet_leader_key = "<Tab>,"
+      vim.g.user_emmet_settings = {
+        javascript = {
+          attribute = {
+            { ["for"] = "htmlFor" },
+            { ["class"] = "className" },
+          },
+          extends = "jsx",
+          ["erb"] = {
+            { extends = "html" },
+          },
+        },
+        typescript = {
+          extends = "tsx",
+        },
+        eruby = {
+          extends = "html",
+        },
+      }
+      vim.g.user_emmet_mode = "inv"
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/L3MON4D3/LuaSnip", {
     build = "make install_jsregexp",
     version = "v2.*",
