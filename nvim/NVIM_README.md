@@ -28,5 +28,8 @@
 - [which-key.nvim](https://github.com/folke/which-key.nvim) - Helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type
 
 
+### Terminal Plugins
+- [here.term](https://github.com/jaimecgomezz/here.term) - use a single terminal instance as any other buffer. Toggle between the file you're editing and the terminal with a single command.
+
 ### TUI Integration
 - [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) - A Git TUI for easy visualization of git operations

@@ -114,6 +114,16 @@ SankofaPlugins.add(
   }
 )
 
+--- Terminal Management
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/jaimecgomezz/here.term", {
+    config = function()
+      require'smithwebdev.plugins.terminal.here_term'
+    end
+  }
+)
+
 
 --- TUI Integration
 --------------------------------------------------------------------------------
