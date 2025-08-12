@@ -7,7 +7,7 @@ require'fyler'.setup({
   },
   views = {
     explorer = {
-      close_on_select = false,
+      close_on_select = true,
       confirm_simple = true,
       default_explorer = true,
       win = {
@@ -27,4 +27,5 @@ require'fyler'.setup({
 
 vim.keymap.set('n', '<leader>fy', '<cmd>Fyler.nvim<CR>', { desc = 'Open Fyler', silent = true, noremap = true })
 vim.keymap.set('n', "<leader>e", "<cmd>Fyler kind=split_left_most<CR>", { desc = 'Open Fyler', silent = true, noremap = true })
+
 vim.o.foldenable=false
