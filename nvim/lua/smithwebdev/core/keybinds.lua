@@ -2,7 +2,6 @@
 --                 SmithWebDev                 --
 --                   Keymaps                   --
 ---[[---------------------------------------]]---
-local keybind_helpers = require('smithwebdev.core.utils.keybind_helpers')
 
 --[[ Map Leader ]]
 --------------------------------------------------------------
@@ -166,8 +165,9 @@ vim.keymap.set("n", "<leader><leader>ct", ":!touch<Space>", { desc = "Touch cli 
 --                 CustomBinds               --
 --[[---------------------------------------]]--
 
-vim.keymap.set('n', 'gf', function()
-  keybind_helpers.smart_gf()
+local keybinds = require('smithwebdev.core.utils.keybinds')
+vim.keymap.set('n', '<leader>gf', function()
+  keybinds.go_to_file()
 end, {
 desc = 'Go to file (smart create)',
 noremap = true,
