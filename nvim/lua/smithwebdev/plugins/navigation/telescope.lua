@@ -1,6 +1,10 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local Layout = require("telescope.pickers.layout")
+local which_key_status, which_key = pcall(require, 'which-key')
+if not which_key_status then 
+  return
+end
 
 require("telescope").setup({
 	defaults = {
@@ -106,6 +110,10 @@ require("telescope").setup({
 			end,
 		},
 	},
+})
+
+which_key.add({
+  {'<leader>f', desc = "Telescope Find .."}
 })
 
 require("telescope").setup({})
