@@ -15,7 +15,6 @@ vim.keymap.set("n", "H", "^", { desc = "Alternative Begin Line", silent = true }
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Maintains cursor when joining lines", silent = true })
 vim.keymap.set("n", "L", "$", { desc = "Alternative End Line", silent = true })
 vim.keymap.set("n", "Y", "y$", { desc = "Alternative Copy to End of Line", silent = true })
-vim.keymap.set("i", "<C-L>", "<Esc>$a", { desc = "Jump to end of line while in Insert Mode", silent = true })
 vim.keymap.set("n", "<", "<gv", { desc = "Alternative Shift Tab (indent)", silent = true })
 vim.keymap.set("n", ">", ">gv", { desc = "Alternative Tab (indent)", silent = true })
 vim.keymap.set("n", "<leader>b", ":b<Space>", { desc = "Switch to buffer #", silent = true })
@@ -45,6 +44,11 @@ vim.keymap.set("n", "==", "gg=G<c-o>", { desc = "Easy indent return cursor to pr
 --[[ Disable Highlights ]]
 ------------------------------------------------------
 vim.keymap.set("n", "<leader><CR>", ":noh<CR>", { desc = "Disable Highlights", silent = true })
+
+--[[ Jump and Insert ]]
+--------------------------------------------------------------
+vim.keymap.set("i", "<C-l>", "<Esc>A", { desc = "Jump to end of line and Insert", silent = true })
+vim.keymap.set("i", "<C-h>", "<Esc>I", { desc = "Jump to beginning of line and Insert", silent = true })
 
 --[[ Move Lines ]]
 --------------------------------------------------------------
