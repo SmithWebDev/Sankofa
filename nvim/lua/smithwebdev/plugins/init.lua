@@ -50,6 +50,19 @@ SankofaPlugins.add(
 --- Completion & Snippets
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/Saghen/blink.cmp", {
+    dependencies = SankofaPlugins.deps_from_urls({
+      -- "https://github.com/honza/vim-snippets"
+      -- "https://github.com/rafamadriz/friendly-snippets"
+    }),
+    version = '1.*',
+    config = function()
+      require'smithwebdev.plugins.completion_snippets.blink_cmp'
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/mattn/emmet-vim", {
     init = function()
       vim.g.user_emmet_leader_key = "<Tab>,"
