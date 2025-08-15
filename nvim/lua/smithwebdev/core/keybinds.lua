@@ -165,7 +165,7 @@ vim.keymap.set("n", "<leader><leader>ct", ":!touch<Space>", { desc = "Touch cli 
 --                 CustomBinds               --
 --[[---------------------------------------]]--
 
-local keybinds = require('smithwebdev.core.utils.keybinds')
+local keybinds = require('smithwebdev.core.utils.go_to_file')
 vim.keymap.set('n', '<leader>gf', function()
   keybinds.go_to_file()
 end, {
