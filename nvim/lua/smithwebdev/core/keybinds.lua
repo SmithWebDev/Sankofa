@@ -79,7 +79,7 @@ vim.keymap.set("n", "<leader>L", "<C-w>L", { desc = "Move Pane Right", silent = 
 --[[ Source file ]]
 -------------------------------------------------------------
 vim.keymap.set("n", "<leader><leader>s%", ":so %<CR>", { desc = "Source current file", silent = true })
-vim.keymap.set("n", "<leader><leader>so", ":source ~/.config/nvim/init.lua<CR>", { desc = "Restart Neovim", silent = true })
+vim.keymap.set("n", "<leader><leader>so", ":source ~/.config/nvim/init.lua<CR>", { desc = "Source config init file", silent = true })
 -- vim.keymap.set("n", "<leader><leader>so", ":restart<CR>", { desc = "Restart Neovim", silent = true })
 
 
