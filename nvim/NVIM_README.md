@@ -26,6 +26,11 @@
 - [lightswitch.nvim](https://github.com/markgandolfo/lightswitch.nvim) - A simple and elegant Neovim plugin that provides a UI for toggling various options.
   - [nui.nvim](https://github.com/MunifTanjim/nui.nvim) - Component library for Neovim
 
+### Language Server Plugins
+- [mason.nvim](https://github.com/mason-org/mason.nvim)
+  - [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim)
+  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
 ### Navigation Plugins
 - [demicolon.nvim](https://github.com/mawkler/demicolon.nvim) - Adds diagnostic and textobject jumps with the default jump keys (;/,)
 - [fyler.nvim](https://github.com/A7Lavinraj/fyler.nvim) - [WIP]

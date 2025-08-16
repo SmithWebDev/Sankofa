@@ -112,6 +112,19 @@ SankofaPlugins.add(
   }
 )
 
+--- Language Server Plugins
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/mason-org/mason.nvim",{
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/mason-org/mason-lspconfig.nvim",
+      "https://github.com/neovim/nvim-lspconfig"
+    }),
+    config = function()
+      require'smithwebdev.plugins.lsp'
+    end
+  }
+)
 
 --- Navigation Plugins
 --------------------------------------------------------------------------------
