@@ -85,23 +85,24 @@ vim.keymap.set("n", "<leader><leader>so", ":source ~/.config/nvim/init.lua<CR>",
 
 --[[ Tabs ]]
 --------------------------------------------------------------------
-vim.keymap.set("n", "<Tab>tc", ":tabc<CR>", { desc = "Close Tab", silent = true })
-vim.keymap.set("n", "<Tab>te", ":tabedit %<CR>", { desc = "Edit File in Tab", silent = true })
-vim.keymap.set("n", "<Tab>th", ":tabfirst<CR>", { desc = "Goto Tab First", silent = true })
-vim.keymap.set("n", "<Tab>tH", ":0tabmove<CR>", { desc = "Move Tab To First Position", silent = true })
-vim.keymap.set("n", "<Tab>tJ", ":tabn<Space>", { desc = "Goto Tab Next", silent = true })
-vim.keymap.set("n", "<Tab>tj", ":tabn<Space><CR>", { desc = "Goto Tab Next", silent = true })
-vim.keymap.set("n", "<Tab>tK", ":tabp<Space>", { desc = "Goto Tab Previous", silent = true })
-vim.keymap.set("n", "<Tab>tk", ":tabp<Space><CR>", { desc = "Goto Tab Previous", silent = true })
-vim.keymap.set("n", "<Tab>tl", ":tablast<CR>", { desc = "Goto Tab Last", silent = true })
-vim.keymap.set("n", "<Tab>tL", ":tabmove<CR>", { desc = "Move Tab To Last Position", silent = true })
-vim.keymap.set("n", "<Tab>tm-", ":-tabmove<CR>", { desc = "Move Tab Left", silent = true })
-vim.keymap.set("n", "<Tab>tm=", ":+tabmove<CR>", { desc = "Move Tab Right", silent = true })
-vim.keymap.set("n", "<Tab>tN", ":tabnew<Space>", { desc = "Goto Tab New", silent = true })
-vim.keymap.set("n", "<Tab>tn", ":tabnew<Space><CR>", { desc = "Goto Tab New", silent = true })
-vim.keymap.set("n", "<Tab>to", "<C-w>T", { desc = "Open File In New Tab", silent = true })
-vim.keymap.set("n", "<Tab>t%", "<C-w>T", { desc = "Open File In New Tab", silent = true })
-vim.keymap.set("n", "<Tab>tt", ":tabs", { desc = "Show Tab List", silent = true })
+vim.keymap.set("n", "<M-t>c", ":tabc<CR>", { desc = "Close Tab", silent = true })
+vim.keymap.set("n", "<M-t>e", ":tabedit %<CR>", { desc = "Edit File in Tab", silent = true })
+vim.keymap.set("n", "<M-t>h", ":tabfirst<CR>", { desc = "Goto Tab First", silent = true })
+vim.keymap.set("n", "<M-t>H", ":0tabmove<CR>", { desc = "Move Tab To First Position", silent = true })
+vim.keymap.set("n", "<M-t>J", ":tabn<Space>", { desc = "Goto Tab Next", silent = true })
+vim.keymap.set("n", "<M-t>j", ":tabn<Space><CR>", { desc = "Goto Tab Next", silent = true })
+vim.keymap.set("n", "<M-t>K", ":tabp<Space>", { desc = "Goto Tab Previous", silent = true })
+vim.keymap.set("n", "<M-t>k", ":tabp<Space><CR>", { desc = "Goto Tab Previous", silent = true })
+vim.keymap.set("n", "<M-t>l", ":tablast<CR>", { desc = "Goto Tab Last", silent = true })
+vim.keymap.set("n", "<M-t>L", ":tabmove<CR>", { desc = "Move Tab To Last Position", silent = true })
+vim.keymap.set("n", "<M-t>m-", ":-tabmove<CR>", { desc = "Move Tab Left", silent = true })
+vim.keymap.set("n", "<M-t>m=", ":+tabmove<CR>", { desc = "Move Tab Right", silent = true })
+vim.keymap.set("n", "<M-t>N", ":tabnew<Space>", { desc = "Goto Tab New", silent = true })
+vim.keymap.set("n", "<M-t>n", ":tabnew<Space><CR>", { desc = "Goto Tab New", silent = true })
+vim.keymap.set("n", "<M-t>n", ":tabnew<Space><CR>", { desc = "Goto Tab New", silent = true })
+vim.keymap.set("n", "<M-t>o", "<C-w>T", { desc = "Open File In New Tab", silent = true })
+vim.keymap.set("n", "<M-t>%", "<C-w>T", { desc = "Open File In New Tab", silent = true })
+vim.keymap.set("n", "<M-t>t", ":tabs", { desc = "Show Tab List", silent = true })
 
 --[[ Terminal Window Navigation ]]
 -------------------------------------------------------
@@ -141,10 +142,6 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Go to the top window", sile
 --[[ QoL ]]
 vim.keymap.set("n", "<C-i>", "<C-i>", { desc = "", silent = true, noremap = true })
 --vim.keymap.set("n", "<Tab>", "<C-^>", { desc = "", silent = true, noremap = true })
-
---[[ Alternative file explorer ]]
------------------------------------------------
---vim.keymap.set("n", '<leader><leader>e',    ':Lex 30<CR>',              { desc = 'Open File Explorer to the left', silent = true })
 
 --[[ Highly Used CLI commands ]]
 ------------------------------------------------
