@@ -22,6 +22,10 @@
 - [emmet-vim](https://github.com/mattn/emmet-vim)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet engine that uses lua but also able to read VSCode & Sublime formatted snippets
 
+### Functional Plugins
+- [lightswitch.nvim](https://github.com/markgandolfo/lightswitch.nvim) - A simple and elegant Neovim plugin that provides a UI for toggling various options.
+  - [nui.nvim](https://github.com/MunifTanjim/nui.nvim) - Component library for Neovim
+
 ### Navigation Plugins
 - [demicolon.nvim](https://github.com/mawkler/demicolon.nvim) - Adds diagnostic and textobject jumps with the default jump keys (;/,)
 - [fyler.nvim](https://github.com/A7Lavinraj/fyler.nvim) - [WIP]

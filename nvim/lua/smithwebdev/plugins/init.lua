@@ -99,6 +99,20 @@ SankofaPlugins.add(
   }
 )
 
+--- Functional Plugins
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/markgandolfo/lightswitch.nvim",{
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/MunifTanjim/nui.nvim"
+    }),
+    config = function()
+      require'smithwebdev.plugins.functionals.lightswitch'
+    end
+  }
+)
+
+
 --- Navigation Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add("https://github.com/mawkler/demicolon.nvim")
