@@ -25,7 +25,7 @@ require'fyler'.setup({
   },
 })
 
-vim.keymap.set('n', '<leader>fy', '<cmd>Fyler.nvim<CR>', { desc = 'Open Fyler', silent = true, noremap = true })
+vim.keymap.set('n', '<leader>fy', '<cmd>Fyler kind=float<CR>', { desc = 'Open Fyler', silent = true, noremap = true })
 vim.keymap.set('n', "<leader>e", "<cmd>Fyler kind=split_left_most<CR>", { desc = 'Open Fyler', silent = true, noremap = true })
 
 vim.o.foldenable=false
