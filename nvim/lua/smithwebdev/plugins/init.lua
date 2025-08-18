@@ -102,6 +102,12 @@ SankofaPlugins.add(
 --- Functional Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/michaelb/sniprun", {
+    build = "sh install.sh",
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/markgandolfo/lightswitch.nvim",{
     dependencies = SankofaPlugins.deps_from_urls({
       "https://github.com/MunifTanjim/nui.nvim"
