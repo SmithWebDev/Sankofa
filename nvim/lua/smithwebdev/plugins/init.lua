@@ -127,88 +127,88 @@ SankofaPlugins.add(
       "https://github.com/neovim/nvim-lspconfig"
     }),
     config = function()
-        require'smithwebdev.plugins.lsp'
-      end
-    }
-  )
+      require'smithwebdev.plugins.lsp'
+    end
+  }
+)
 
-  --- Navigation Plugins
-  --------------------------------------------------------------------------------
-  SankofaPlugins.add("https://github.com/mawkler/demicolon.nvim")
+--- Navigation Plugins
+--------------------------------------------------------------------------------
+SankofaPlugins.add("https://github.com/mawkler/demicolon.nvim")
 
-  SankofaPlugins.add(
-    "https://github.com/A7Lavinraj/fyler.nvim", {
-      dependencies = SankofaPlugins.deps_from_urls({
-        "https://github.com/nvim-tree/nvim-web-devicons" 
-      }),
-      keys = {
-        {"<leader>fy"},
-        {"<leader>e"}
-      },
-      config = function()
-        require'smithwebdev.plugins.navigation.fyler'
-      end
-    }
-  )
+SankofaPlugins.add(
+  "https://github.com/A7Lavinraj/fyler.nvim", {
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/nvim-tree/nvim-web-devicons" 
+    }),
+    keys = {
+      {"<leader>fy"},
+      {"<leader>e"}
+    },
+    config = function()
+      require'smithwebdev.plugins.navigation.fyler'
+    end
+  }
+)
 
-  SankofaPlugins.add(
-    "https://github.com/nvim-telescope/telescope.nvim", {
-      lazy = true,
-      keys = {
-        {"<leader>ff"},
-        {"<leader>fF"},
-        {"<leader>fg"},
-      },
-      config = function()
-        require'smithwebdev.plugins.navigation.telescope'
-      end
-    }
-  )
+SankofaPlugins.add(
+  "https://github.com/nvim-telescope/telescope.nvim", {
+    lazy = true,
+    keys = {
+      {"<leader>ff"},
+      {"<leader>fF"},
+      {"<leader>fg"},
+    },
+    config = function()
+      require'smithwebdev.plugins.navigation.telescope'
+    end
+  }
+)
 
-  SankofaPlugins.add(
-    "https://github.com/folke/which-key.nvim", {
-      config = function()
-        require'smithwebdev.plugins.navigation.which_key'
-      end
-    }
-  )
+SankofaPlugins.add(
+  "https://github.com/folke/which-key.nvim", {
+    config = function()
+      require'smithwebdev.plugins.navigation.which_key'
+    end
+  }
+)
 
-  --- Plugin Packages
-  --------------------------------------------------------------------------------
-  SankofaPlugins.add(
-    "https://github.com/folke/snacks.nvim", {
-      config = function()
-        require'smithwebdev.plugins.packages.snacks'
-      end
-    }
-  )
+--- Plugin Packages
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/folke/snacks.nvim", {
+    config = function()
+      require'smithwebdev.plugins.packages.snacks'
+    end
+  }
+)
 
-  --- Programming Language Plugins
-  --------------------------------------------------------------------------------
+--- Programming Language Plugins
+--------------------------------------------------------------------------------
 
-  --- Terminal Management
-  --------------------------------------------------------------------------------
-  SankofaPlugins.add(
-    "https://github.com/jaimecgomezz/here.term", {
-      config = function()
-        require'smithwebdev.plugins.terminal.here_term'
-      end
-    }
-  )
-
-
-  --- TUI Integration
-  --------------------------------------------------------------------------------
-  SankofaPlugins.add(
-    "https://github.com/kdheepak/lazygit.nvim", {
-      keys = { "<leader>gl" },
-      lazy = true,
-      config = function()
-        vim.keymap.set('n', '<leader>gl', "<cmd>LazyGit<cr>", {desc = 'LazyGit'})
-      end
-    }
-  )
+--- Terminal Management
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/jaimecgomezz/here.term", {
+    config = function()
+      require'smithwebdev.plugins.terminal.here_term'
+    end
+  }
+)
 
 
-  SankofaPlugins.add("")
-  -- https://github.com/folke/snacks.nvim
+--- TUI Integration
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/kdheepak/lazygit.nvim", {
+    keys = { "<leader>gl" },
+    lazy = true,
+    config = function()
+      vim.keymap.set('n', '<leader>gl', "<cmd>LazyGit<cr>", {desc = 'LazyGit'})
+    end
+  }
+)
+
+
+SankofaPlugins.add("")
+-- https://github.com/folke/snacks.nvim
