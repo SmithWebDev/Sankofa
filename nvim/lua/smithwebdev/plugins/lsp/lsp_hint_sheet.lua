@@ -1,0 +1,2 @@
+-- To see the capabilities for a given server, this works in a LSP-enabled buffer
+-- :lua =vim.lsp.get_clients()[1].server_capabilities
