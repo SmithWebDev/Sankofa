@@ -1325,3 +1325,10 @@ require('markview').setup({
   },
 })
 
+
+local lightswitch_status, lightswitch = pcall(require, 'lightswitch')
+if not lightswitch_status then
+  return
+end
+
+lightswitch.add_toggle("Markview", "Markview toggle", "Markview toggle", true)

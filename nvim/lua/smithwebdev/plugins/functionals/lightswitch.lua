@@ -1,4 +1,4 @@
-lightswitch = require'lightswitch'
+local lightswitch = require'lightswitch'
 
 lightswitch.setup({
   colors = {
@@ -7,3 +7,5 @@ lightswitch.setup({
   },
   toggles = { }
 })
+
+
