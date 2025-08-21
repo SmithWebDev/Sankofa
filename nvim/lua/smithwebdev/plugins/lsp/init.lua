@@ -46,7 +46,10 @@ local on_attach = function(client, bufnr)
     end
   end
 
-  -- Example keymaps
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+  end
+
   local map = function(mode, lhs, rhs, desc)
     vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = "LSP: " .. desc })
   end
@@ -70,6 +73,9 @@ local on_attach = function(client, bufnr)
     })
   end, "Lsp Diagnostic Float")
 
+  map('n', "<leader>lih", function ()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, "Toggle Inlay Hints")
 end
 
 
@@ -142,4 +148,3 @@ for _, server in ipairs(servers) do
     vim.notify("LSP server not available in lspconfig: " .. server, vim.log.levels.WARN)
   end
 end
-
