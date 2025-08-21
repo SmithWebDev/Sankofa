@@ -109,6 +109,19 @@ SankofaPlugins.add(
       "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "https://github.com/RRethy/nvim-treesitter-textsubjects",
     })
+SankofaPlugins.add(
+  "https://github.com/hasansujon786/nvim-navbuddy", {
+    -- name = "navbuddy",
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/neovim/nvim-lspconfig",
+      "https://github.com/SmiteshP/nvim-navic",
+      "https://github.com/MunifTanjim/nui.nvim",
+      "https://github.com/numToStr/Comment.nvim",
+      "https://github.com/nvim-telescope/telescope.nvim"
+    }),
+    config = function ()
+      require'smithwebdev.plugins.functionals.navbuddy'
+    end
   }
 )
 

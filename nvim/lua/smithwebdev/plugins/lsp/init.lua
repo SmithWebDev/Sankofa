@@ -1,5 +1,6 @@
 -- Mason setup
-require("mason").setup()
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
 
 local servers = {
   "cssls",
@@ -18,7 +19,9 @@ local servers = {
   "yamlls",
 }
 
-require("mason-lspconfig").setup({
+mason.setup()
+
+mason_lspconfig.setup({
   ensure_installed = servers,
   automatic_enable = false
 })
@@ -38,6 +41,11 @@ local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- on_attach with duplicate prevention
 local on_attach = function(client, bufnr)
+  local navbuddy_status, navbuddy = pcall(require, 'navbuddy')
+  if not navbuddy_status then 
+    return
+  end
+
   -- Prevent multiple clients of same name attaching
   for _, c in pairs(vim.lsp.get_clients({ bufnr = bufnr })) do
     if c.name == client.name and c.id ~= client.id then
@@ -53,6 +61,8 @@ local on_attach = function(client, bufnr)
   local map = function(mode, lhs, rhs, desc)
     vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = "LSP: " .. desc })
   end
+
+  navbuddy.attach(client, bufnr)
 
   map("n", "<leader>ld", vim.lsp.buf.definition, "Lsp Definition")
   map("n", "<leader>l<space>", vim.lsp.buf.hover, "Lsp Hover")
