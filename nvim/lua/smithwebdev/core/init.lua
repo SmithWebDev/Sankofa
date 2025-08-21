@@ -1,5 +1,4 @@
 require "smithwebdev.core.keybinds"
 require "smithwebdev.core.settings"
 require "smithwebdev.core.autocmds"
-require "smithwebdev.core.utils"
 require "smithwebdev.core.lazy"

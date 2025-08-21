@@ -131,6 +131,7 @@ SankofaPlugins.add(
     end
   }
 )
+
 SankofaPlugins.add(
   "https://github.com/hasansujon786/nvim-navbuddy", {
     -- name = "navbuddy",
