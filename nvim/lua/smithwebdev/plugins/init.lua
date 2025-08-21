@@ -114,6 +114,24 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/nvim-neotest/neotest", {
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/nvim-lua/plenary.nvim",
+      "https://github.com/nvim-neotest/nvim-nio",
+      "https://github.com/antoinemadec/FixCursorHold.nvim",
+      "https://github.com/nvim-treesitter/nvim-treesitter",
+      "https://github.com/vim-test/vim-test",
+      "https://github.com/nvim-neotest/neotest-vim-test",
+      "https://github.com/zidhuss/neotest-minitest",
+      "https://github.com/olimorris/neotest-rspec",
+      "https://github.com/haydenmeade/neotest-jest"
+    }),
+    config = function ()
+      require'smithwebdev.plugins.functional.neotest'
+    end
+  }
+)
+SankofaPlugins.add(
   "https://github.com/hasansujon786/nvim-navbuddy", {
     -- name = "navbuddy",
     dependencies = SankofaPlugins.deps_from_urls({
