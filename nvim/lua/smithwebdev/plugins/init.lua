@@ -104,11 +104,15 @@ SankofaPlugins.add(
 SankofaPlugins.add(
   "https://github.com/nvim-treesitter/nvim-treesitter",{
     dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/OXY2DEV/markview.nvim",
       "https://github.com/nvim-treesitter/playground",
       "https://github.com/RRethy/nvim-treesitter-endwise",
       "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "https://github.com/RRethy/nvim-treesitter-textsubjects",
-    })
+    }),
+  }
+)
+
 SankofaPlugins.add(
   "https://github.com/hasansujon786/nvim-navbuddy", {
     -- name = "navbuddy",
@@ -217,6 +221,13 @@ SankofaPlugins.add(
   }
 )
 
+SankofaPlugins.add(
+  "https://github.com/OXY2DEV/markview.nvim",{
+    config = function ()
+      require'smithwebdev.plugins.languages.markview'
+    end
+  }
+)
 
 --- Terminal Management
 --------------------------------------------------------------------------------
