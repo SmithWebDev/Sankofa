@@ -102,6 +102,17 @@ SankofaPlugins.add(
 --- Functional Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/nvim-treesitter/nvim-treesitter",{
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/nvim-treesitter/playground",
+      "https://github.com/RRethy/nvim-treesitter-endwise",
+      "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+      "https://github.com/RRethy/nvim-treesitter-textsubjects",
+    })
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/michaelb/sniprun", {
     build = "sh install.sh",
   }
