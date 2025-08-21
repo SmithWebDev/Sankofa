@@ -196,6 +196,14 @@ SankofaPlugins.add(
 
 --- Programming Language Plugins
 --------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/OXY2DEV/helpview.nvim", {
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/nvim-treesitter/nvim-treesitter"
+    })
+  }
+)
+
 
 --- Terminal Management
 --------------------------------------------------------------------------------
