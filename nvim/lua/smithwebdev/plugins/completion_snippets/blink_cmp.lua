@@ -1,4 +1,4 @@
-blink = require'blink.cmp'
+local blink = require'blink.cmp'
 blink.setup({
   keymap = {},
   completion = {
@@ -6,4 +6,7 @@ blink.setup({
       auto_show = false,
     }
   },
+  sources = {
+    default = { 'lsp', 'path', 'snippets', 'buffer' },
+  }
 })
