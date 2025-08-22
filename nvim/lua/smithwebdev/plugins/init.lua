@@ -102,6 +102,14 @@ SankofaPlugins.add(
 --- Functional Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/mfussenegger/nvim-dap", {
+    config = function ()
+      require'smithwebdev.plugins.functionals.dap'
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/nvim-treesitter/nvim-treesitter",{
     dependencies = SankofaPlugins.deps_from_urls({
       "https://github.com/OXY2DEV/markview.nvim",
