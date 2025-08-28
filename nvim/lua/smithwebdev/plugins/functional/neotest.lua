@@ -131,20 +131,19 @@ require("neotest").setup({
   },
 })
 
--- TODO: Decide on a keybind strategy <smithwebdev> 
-vim.keymap.set('n', "<leader>tna",  function() require("neotest").run.attach() end,                     {desc = "Attach Test"})
-vim.keymap.set('n', "<leader>tncf", function() require("neotest").run.run(vim.fn.expand("%")) end,      {desc = "Run All Test Current File"})
+vim.keymap.set('n', "<leader>ta",  function() require("neotest").run.attach() end,                     {desc = "Attach Test"})
+vim.keymap.set('n', "<leader>tcf", function() require("neotest").run.run(vim.fn.expand("%")) end,      {desc = "Run All Test Current File"})
 vim.keymap.set('n', "]t",       function() require("neotest").jump.next() end,                      {desc = "Jump to Next Test"})
 vim.keymap.set('n', "[t",       function() require("neotest").jump.prev() end,                      {desc = "Jump to Previous Test"})
-vim.keymap.set('n', "<leader>tnn",  function() require("neotest").run.run() end,                        {desc = "Run Nearest Test Current File"})
-vim.keymap.set('n', "<leader>tnr",  function() require("neotest").output.open() end,                    {desc = "Toggle Test Result Window"})
-vim.keymap.set('n', "<leader>tno",  function() require("neotest").output_panel.toggle() end,            {desc = "Toggle Test Result Window"})
-vim.keymap.set('n', "<leader>tns",  function() require("neotest").summary.toggle() end,                 {desc = "Toggle Summary Window"})
-vim.keymap.set('n', "<leader>tnu",  function() require("neotest").summary.clear_marked() end,           {desc = "Clear Marked Tests"})
-vim.keymap.set('n', "<leader>tnw",  function() require("neotest").watch.toggle(vim.fn.expand("%")) end, {desc = "Watch current file for changes"})
-vim.keymap.set('n', "<leader>tnW",  function() require("neotest").watch.stop() end,                     {desc = "Stop watching current file(s) for changes"})
-vim.keymap.set('n', "<leader>tnx",  function() require("neotest").run.stop() end,                       {desc = "Stop Running Tests"})
-vim.keymap.set('n', "<leader>tnz",  function() require("neotest").summary.run_marked() end,             {desc = "Run Marked Tests"})
+vim.keymap.set('n', "<leader>tn",  function() require("neotest").run.run() end,                        {desc = "Run Nearest Test Current File"})
+vim.keymap.set('n', "<leader>tr",  function() require("neotest").output.open() end,                    {desc = "Toggle Test Result Window"})
+vim.keymap.set('n', "<leader>to",  function() require("neotest").output_panel.toggle() end,            {desc = "Toggle Test Result Window"})
+vim.keymap.set('n', "<leader>ts",  function() require("neotest").summary.toggle() end,                 {desc = "Toggle Summary Window"})
+vim.keymap.set('n', "<leader>tu",  function() require("neotest").summary.clear_marked() end,           {desc = "Clear Marked Tests"})
+vim.keymap.set('n', "<leader>tw",  function() require("neotest").watch.toggle(vim.fn.expand("%")) end, {desc = "Watch current file for changes"})
+vim.keymap.set('n', "<leader>tW",  function() require("neotest").watch.stop() end,                     {desc = "Stop watching current file(s) for changes"})
+vim.keymap.set('n', "<leader>tx",  function() require("neotest").run.stop() end,                       {desc = "Stop Running Tests"})
+vim.keymap.set('n', "<leader>tz",  function() require("neotest").summary.run_marked() end,             {desc = "Run Marked Tests"})
 
     -- function() require('neotest').run.run({status = 'failed'})
 

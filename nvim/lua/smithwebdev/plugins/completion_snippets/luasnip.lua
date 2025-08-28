@@ -37,27 +37,27 @@ ls.filetype_extend("octo", { "markdown" })
 --      Keymaps       --
 ------------------------
 
-vim.keymap.set({ "i", "s" }, "<C-l>", function()
-	if ls.choice_active() then
-		ls.change_choice(1)
-	end
-end)
-vim.keymap.set({ "i", "s" }, "<C-h>", function()
-	if ls.choice_active() then
-		ls.change_choice(-1)
-	end
-end)
-
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-	if ls.jumpable(1) then
-		ls.expand_or_jump()
-	end
-end)
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-	if ls.jumpable(-1) then
-		ls.jump(-1)
-	end
-end)
+-- vim.keymap.set({ "i", "s" }, "<C-l>", function()
+-- 	if ls.choice_active() then
+-- 		ls.change_choice(1)
+-- 	end
+-- end)
+-- vim.keymap.set({ "i", "s" }, "<C-h>", function()
+-- 	if ls.choice_active() then
+-- 		ls.change_choice(-1)
+-- 	end
+-- end)
+--
+-- vim.keymap.set({ "i", "s" }, "<C-j>", function()
+-- 	if ls.jumpable(1) then
+-- 		ls.expand_or_jump()
+-- 	end
+-- end)
+-- vim.keymap.set({ "i", "s" }, "<C-k>", function()
+-- 	if ls.jumpable(-1) then
+-- 		ls.jump(-1)
+-- 	end
+-- end)
 
 --vim.cmd([[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]])
 --vim.keymap.set({ "i", "s" }, "<c-u>", '<cmd>lua require("luasnip.extras.select_choice")()<cr><C-c><C-c>')

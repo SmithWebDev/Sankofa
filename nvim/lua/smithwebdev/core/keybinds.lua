@@ -47,8 +47,8 @@ vim.keymap.set("n", "<leader><CR>", ":noh<CR>", { desc = "Disable Highlights", s
 
 --[[ Jump and Insert ]]
 --------------------------------------------------------------
-vim.keymap.set("i", "<C-l>", "<Esc>A", { desc = "Jump to end of line and Insert", silent = true })
-vim.keymap.set("i", "<C-h>", "<Esc>I", { desc = "Jump to beginning of line and Insert", silent = true })
+vim.keymap.set("i", "<C-l>", "<C-o>A", { desc = "Jump to end of line and Insert", silent = true })
+vim.keymap.set("i", "<C-h>", "<C-o>I", { desc = "Jump to beginning of line and Insert", silent = true })
 
 --[[ Move Lines ]]
 --------------------------------------------------------------
@@ -116,10 +116,10 @@ vim.keymap.set("n", "<M-t>t", ":tabs", { desc = "Show Tab List", silent = true }
 
 --[[ Window Navigation ]]
 -------------------------------------------------------
-vim.keymap.set({"n", "t"}, "<C-h>", "<C-w>h", { desc = "Navigate Left", silent = true })
-vim.keymap.set({"n", "t"}, "<C-j>", "<C-w>j", { desc = "Navigate Down", silent = true })
-vim.keymap.set({"n", "t"}, "<C-k>", "<C-w>k", { desc = "Navigate Up", silent = true })
-vim.keymap.set({"n", "t"}, "<C-l>", "<C-w>l", { desc = "Navigate Right", silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-h>", "<C-w>h", { desc = "Navigate Left", silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-j>", "<C-w>j", { desc = "Navigate Down", silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-k>", "<C-w>k", { desc = "Navigate Up", silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-l>", "<C-w>l", { desc = "Navigate Right", silent = true })
 
 --[[ Window Resize ]]
 -----------------------------------------------------------
@@ -174,3 +174,5 @@ desc = 'Go to file (smart create)',
 noremap = true,
 silent = true
 })
+
+
