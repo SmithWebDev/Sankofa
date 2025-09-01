@@ -1,4 +1,4 @@
---- Colorschemes Plugins
+-- Colorschemes Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
   "https://github.com/pauchiner/pastelnight.nvim", {
@@ -151,6 +151,14 @@ SankofaPlugins.add(
 SankofaPlugins.add(
   "https://github.com/michaelb/sniprun", {
     build = "sh install.sh",
+  }
+)
+
+SankofaPlugins.add(
+  "https://github.com/folke/todo-comments.nvim", {
+    config = function ()
+      require'smithwebdev.plugins.functional.todo_comments'
+    end
   }
 )
 
