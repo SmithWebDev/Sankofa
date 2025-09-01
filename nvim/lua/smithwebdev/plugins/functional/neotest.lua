@@ -1,4 +1,7 @@
-require("neotest").setup({
+-- Neotest ------------------------------------------------
+local neotest = require("neotest")
+
+neotest.setup({
   adapters = {
     require("neotest-vim-test")({
       -- Let dedicated adapters handle their langs
