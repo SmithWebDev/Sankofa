@@ -182,6 +182,24 @@ SankofaPlugins.add(
     end
   }
 )
+    SankofaPlugins.add(
+      "https://github.com/kevinhwang91/nvim-ufo", {
+        dependencies = SankofaPlugins.deps_from_urls({
+          "https://github.com/kevinhwang91/promise-async"
+        }),
+        event = "VeryLazy",
+        init = function()
+          -- UFO’s baseline (keeps folds open and shows a slim fold column)
+          vim.o.foldcolumn = "1"      -- '0' also works if you prefer no gutter
+          vim.o.foldlevel = 99        -- large so providers control what’s closed
+          vim.o.foldlevelstart = 99
+          vim.o.foldenable = true
+        end,
+        config = function()
+          require'lua.smithwebdev.plugins.functionals.ufo'
+        end
+      }
+    )
 
 SankofaPlugins.add(
   "https://github.com/markgandolfo/lightswitch.nvim",{

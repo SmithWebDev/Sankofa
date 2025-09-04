@@ -25,6 +25,10 @@ vim.diagnostic.config({
 
 -- LSP Setup ------------------------------------------------------
 local capabilities = require("blink.cmp").get_lsp_capabilities()
+--
+-- LSP capabilities: enable Folding Range BEFORE your LSP setup ----------------
+capabilities.textDocument = capabilities.textDocument or {}
+capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFoldingOnly = true }
 
 -- Helpers --------------------------------------------------------
 local function set_lsp_keymaps(bufnr)
