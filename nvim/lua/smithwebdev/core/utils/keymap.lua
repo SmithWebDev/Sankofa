@@ -1,0 +1,72 @@
+-- -- lua/util/keymap.lua
+-- local M = {}
+--
+-- -- Internal: merge options with sensible defaults
+-- local function with_defaults(opts)
+--   opts = opts or {}
+--   if opts.silent == nil then opts.silent = true end
+--   if opts.noremap == nil then opts.noremap = true end
+--   -- allow opts.buffer = true to mean "current buffer"
+--   if opts.buffer == true then opts.buffer = 0 end
+--   return opts
+-- end
+--
+-- -- Base mapper: prefix-aware, works for any keybinding
+-- -- Usage:
+-- --   M.map("n", "K", vim.lsp.buf.hover, "Hover", { prefix = "LSP: ", buffer = bufnr })
+-- function M.map(mode, lhs, rhs, desc, opts)
+--   opts = with_defaults(opts)
+--   -- Build final description (prefix + desc) if provided
+--   local prefix = opts.prefix or ""
+--   if desc then
+--     opts.desc = (prefix ~= "" and (prefix .. desc)) or desc
+--   elseif opts.desc and prefix ~= "" then
+--     -- If desc was put directly in opts, still honor the prefix
+--     opts.desc = prefix .. opts.desc
+--   end
+--   return vim.keymap.set(mode, lhs, rhs, opts)
+-- end
+--
+-- -- Factory: returns a mapper that always applies this prefix (namespace) and base opts
+-- -- Usage:
+-- --   local lsp_map = M.ns("LSP: ", { buffer = bufnr })
+-- --   lsp_map("n", "<leader>ld", vim.lsp.buf.definition, "Definition")
+-- function M.ns(prefix, base_opts)
+--   base_opts = with_defaults(base_opts or {})
+--   return function(mode, lhs, rhs, desc, opts)
+--     opts = with_defaults(opts)
+--     -- Merge base_opts -> opts (opts wins)
+--     opts = vim.tbl_extend("force", base_opts, opts)
+--     -- Ensure prefix is present (opts can override if needed)
+--     opts.prefix = opts.prefix or prefix
+--     return M.map(mode, lhs, rhs, desc, opts)
+--   end
+-- end
+--
+-- -- Convenience: buffer-scoped mapper (optionally with a prefix)
+-- -- Usage:
+-- --   local bmap = M.buf(bufnr, "LSP: ")
+-- --   bmap("n", "K", vim.lsp.buf.hover, "Hover")
+-- function M.buf(bufnr, prefix, base_opts)
+--   base_opts = base_opts or {}
+--   base_opts.buffer = bufnr
+--   return M.ns(prefix or "", base_opts)
+-- end
+--
+-- -- Extra sugar for common namespaces
+-- -- Usage:
+-- --   local lsp_map = M.lsp(bufnr)          -- default "LSP: "
+-- --   local dap_map = M.dap()               -- global DAP maps with "DAP: "
+-- function M.lsp(bufnr, prefix) return M.buf(bufnr, prefix or "LSP: ") end
+-- function M.dap(prefix)        return M.ns(prefix or "DAP: ") end
+-- function M.tests(prefix)      return M.ns(prefix or "Tests: ") end
+-- function M.blink(prefix)      return M.ns(prefix or "Blink: ") end
+--
+-- return M
+--
+--
+--
+-- -- local km = require("util.keymap")
+-- -- local map = km.lsp(bufnr)  -- prefix "LSP: ", buffer = bufnr
+-- -- map("n", "<leader>ld", vim.lsp.buf.definition, "Definition")
+-- -- map("n", "<leader>lK", vim.lsp.buf.hover,      "Hover")
