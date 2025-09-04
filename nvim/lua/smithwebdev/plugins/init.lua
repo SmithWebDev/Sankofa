@@ -109,8 +109,10 @@ SankofaPlugins.add(
       "https://github.com/rcarriga/nvim-dap-ui",
       "https://github.com/suketa/nvim-dap-ruby"
     }),
+  "https://github.com/mluders/comfy-line-numbers.nvim",{
     config = function ()
       require'smithwebdev.plugins.functionals.dap'
+      require'smithwebdev.plugins.functional.comfy_line_numbers'
     end
   }
 )
