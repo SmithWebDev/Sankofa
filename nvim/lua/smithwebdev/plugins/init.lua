@@ -102,16 +102,8 @@ SankofaPlugins.add(
 --- Functional Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
-  "https://github.com/mfussenegger/nvim-dap", {
-    dependencies = SankofaPlugins.deps_from_urls({
-      -- "https://github.com/igorlfs/nvim-dap-view",
-      "https://github.com/theHamsta/nvim-dap-virtual-text",
-      "https://github.com/rcarriga/nvim-dap-ui",
-      "https://github.com/suketa/nvim-dap-ruby"
-    }),
   "https://github.com/mluders/comfy-line-numbers.nvim",{
     config = function ()
-      require'smithwebdev.plugins.functionals.dap'
       require'smithwebdev.plugins.functional.comfy_line_numbers'
     end
   }
@@ -163,6 +155,19 @@ SankofaPlugins.add(
     end
   }
 )
+    SankofaPlugins.add(
+      "https://github.com/mfussenegger/nvim-dap", {
+        dependencies = SankofaPlugins.deps_from_urls({
+          -- "https://github.com/igorlfs/nvim-dap-view",
+          "https://github.com/theHamsta/nvim-dap-virtual-text",
+          "https://github.com/rcarriga/nvim-dap-ui",
+          "https://github.com/suketa/nvim-dap-ruby"
+        }),
+        config = function ()
+          require'smithwebdev.plugins.functionals.dap'
+        end
+      }
+    )
 
 SankofaPlugins.add(
   "https://github.com/michaelb/sniprun", {
