@@ -109,6 +109,30 @@ SankofaPlugins.add(
   }
 )
 
+
+SankofaPlugins.add(
+  "https://github.com/jake-stewart/multicursor.nvim", {
+    branch = "1.0",
+    config = function ()
+      -- require'lua.smithwebdev.plugins.functional.mutlicursor'
+    end
+  }
+)
+
+SankofaPlugins.add(
+  "https://github.com/mfussenegger/nvim-dap", {
+    dependencies = SankofaPlugins.deps_from_urls({
+      -- "https://github.com/igorlfs/nvim-dap-view",
+      "https://github.com/theHamsta/nvim-dap-virtual-text",
+      "https://github.com/rcarriga/nvim-dap-ui",
+      "https://github.com/suketa/nvim-dap-ruby"
+    }),
+    config = function ()
+      require'smithwebdev.plugins.functionals.dap'
+    end
+  }
+)
+
 SankofaPlugins.add(
   "https://github.com/nvim-treesitter/nvim-treesitter",{
     dependencies = SankofaPlugins.deps_from_urls({
@@ -118,6 +142,25 @@ SankofaPlugins.add(
       "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "https://github.com/RRethy/nvim-treesitter-textsubjects",
     }),
+  }
+)
+
+SankofaPlugins.add(
+  "https://github.com/kevinhwang91/nvim-ufo", {
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/kevinhwang91/promise-async"
+    }),
+    event = "VeryLazy",
+    init = function()
+      -- UFO’s baseline (keeps folds open and shows a slim fold column)
+      vim.o.foldcolumn = "1"      -- '0' also works if you prefer no gutter
+      vim.o.foldlevel = 99        -- large so providers control what’s closed
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+    end,
+    config = function()
+      require'lua.smithwebdev.plugins.functionals.ufo'
+    end
   }
 )
 
@@ -134,19 +177,11 @@ SankofaPlugins.add(
       "https://github.com/olimorris/neotest-rspec",
       "https://github.com/haydenmeade/neotest-jest"
     }),
-    config = function ()
+    config = function()
       require'smithwebdev.plugins.functional.neotest'
     end
   }
 )
-    SankofaPlugins.add(
-      "https://github.com/jake-stewart/multicursor.nvim", {
-        branch = "1.0",
-        config = function ()
-          -- require'lua.smithwebdev.plugins.functional.mutlicursor'
-        end
-      }
-    )
 
 SankofaPlugins.add(
   "https://github.com/hasansujon786/nvim-navbuddy", {
@@ -163,19 +198,6 @@ SankofaPlugins.add(
     end
   }
 )
-    SankofaPlugins.add(
-      "https://github.com/mfussenegger/nvim-dap", {
-        dependencies = SankofaPlugins.deps_from_urls({
-          -- "https://github.com/igorlfs/nvim-dap-view",
-          "https://github.com/theHamsta/nvim-dap-virtual-text",
-          "https://github.com/rcarriga/nvim-dap-ui",
-          "https://github.com/suketa/nvim-dap-ruby"
-        }),
-        config = function ()
-          require'smithwebdev.plugins.functionals.dap'
-        end
-      }
-    )
 
 SankofaPlugins.add(
   "https://github.com/michaelb/sniprun", {
@@ -190,24 +212,6 @@ SankofaPlugins.add(
     end
   }
 )
-    SankofaPlugins.add(
-      "https://github.com/kevinhwang91/nvim-ufo", {
-        dependencies = SankofaPlugins.deps_from_urls({
-          "https://github.com/kevinhwang91/promise-async"
-        }),
-        event = "VeryLazy",
-        init = function()
-          -- UFO’s baseline (keeps folds open and shows a slim fold column)
-          vim.o.foldcolumn = "1"      -- '0' also works if you prefer no gutter
-          vim.o.foldlevel = 99        -- large so providers control what’s closed
-          vim.o.foldlevelstart = 99
-          vim.o.foldenable = true
-        end,
-        config = function()
-          require'lua.smithwebdev.plugins.functionals.ufo'
-        end
-      }
-    )
 
 SankofaPlugins.add(
   "https://github.com/markgandolfo/lightswitch.nvim",{
@@ -285,6 +289,8 @@ SankofaPlugins.add(
   }
 )
 
+
+
 --- Programming Language Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
@@ -329,3 +335,13 @@ SankofaPlugins.add(
 
 SankofaPlugins.add("")
 -- https://github.com/folke/snacks.nvim
+-- SankofaPlugins.add(
+  --   "https://github.com/IstiCusi/docpair.nvim",{
+    --     config = true
+    --   }
+    -- )
+    -- SankofaPlugins.add(
+      --   "https://github.com/piersolenski/wtf.nvim",{
+        --   }
+        -- )
+
