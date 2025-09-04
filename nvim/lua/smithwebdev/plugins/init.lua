@@ -139,6 +139,14 @@ SankofaPlugins.add(
     end
   }
 )
+    SankofaPlugins.add(
+      "https://github.com/jake-stewart/multicursor.nvim", {
+        branch = "1.0",
+        config = function ()
+          -- require'lua.smithwebdev.plugins.functional.mutlicursor'
+        end
+      }
+    )
 
 SankofaPlugins.add(
   "https://github.com/hasansujon786/nvim-navbuddy", {
