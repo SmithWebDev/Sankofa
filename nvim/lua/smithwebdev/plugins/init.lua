@@ -114,7 +114,7 @@ SankofaPlugins.add(
   "https://github.com/jake-stewart/multicursor.nvim", {
     branch = "1.0",
     config = function ()
-      -- require'lua.smithwebdev.plugins.functional.mutlicursor'
+      -- require'smithwebdev.plugins.functional.mutlicursor'
     end
   }
 )
@@ -128,7 +128,7 @@ SankofaPlugins.add(
       "https://github.com/suketa/nvim-dap-ruby"
     }),
     config = function ()
-      require'smithwebdev.plugins.functionals.dap'
+      require'smithwebdev.plugins.functional.dap'
     end
   }
 )
@@ -159,7 +159,7 @@ SankofaPlugins.add(
       vim.o.foldenable = true
     end,
     config = function()
-      require'lua.smithwebdev.plugins.functionals.ufo'
+      require'smithwebdev.plugins.functional.ufo'
     end
   }
 )
@@ -194,7 +194,7 @@ SankofaPlugins.add(
       "https://github.com/nvim-telescope/telescope.nvim"
     }),
     config = function ()
-      require'smithwebdev.plugins.functionals.navbuddy'
+      require'smithwebdev.plugins.functional.navbuddy'
     end
   }
 )
@@ -219,7 +219,7 @@ SankofaPlugins.add(
       "https://github.com/MunifTanjim/nui.nvim"
     }),
     config = function()
-      require'smithwebdev.plugins.functionals.lightswitch'
+      require'smithwebdev.plugins.functional.lightswitch'
     end
   }
 )
