@@ -282,6 +282,15 @@ SankofaPlugins.add(
 --- Plugin Packages
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/nvim-mini/mini.nvim",{
+    version = "*",
+    config = function ()
+      require'smithwebdev.plugins.packages.mini'
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/folke/snacks.nvim", {
     config = function()
       require'smithwebdev.plugins.packages.snacks'
