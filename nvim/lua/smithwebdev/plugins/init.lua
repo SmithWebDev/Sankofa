@@ -87,3 +87,15 @@ SankofaPlugins.add(
   }
 )
 
+-- --- TUI Integration
+-- --------------------------------------------------------------------------------
+SankofaPlugins.add(
+  'https://github.com/kdheepak/lazygit.nvim', {
+    keys = { '<leader>gl' },
+    lazy = true,
+    config = function()
+      vim.keymap.set('n', '<leader>gl', '<cmd>LazyGit<cr>', {desc = 'LazyGit'})
+    end
+  }
+)
+
