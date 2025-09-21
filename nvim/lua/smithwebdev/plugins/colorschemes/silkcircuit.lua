@@ -22,4 +22,4 @@ require("silkcircuit").setup({
     -- See :h silkcircuit-integrations for full list
   },
 })
--- vim.cmd[[colorscheme silkcircuit]]
+vim.cmd[[colorscheme silkcircuit]]
