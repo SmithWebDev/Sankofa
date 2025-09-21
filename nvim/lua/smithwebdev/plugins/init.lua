@@ -59,6 +59,21 @@ SankofaPlugins.add(
 --- Navigation Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  'https://github.com/A7Lavinraj/fyler.nvim', {
+    dependencies = SankofaPlugins.deps_from_urls({
+      'https://github.com/nvim-mini/mini.icons'
+    }),
+    keys = {
+      {'<leader>fy'},
+      {'<leader>e'}
+    },
+    config = function()
+      require'smithwebdev.plugins.navigation.fyler'
+    end
+  }
+)
+
+SankofaPlugins.add(
   'https://github.com/nvim-telescope/telescope.nvim', {
     lazy = true,
     keys = {

@@ -1,5 +1,5 @@
 require'fyler'.setup({
-  icon_provider = "nvim-web-devicons",
+  icon_provider = "mini_icons",
   mappings = {
     explorer = {
       ["<Space>e"] = "CloseView",
