@@ -46,8 +46,18 @@ SankofaPlugins.add(
   }
 )
 
--- --- Navigation Plugins
--- --------------------------------------------------------------------------------
+--- Functional Plugins
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  'https://github.com/mluders/comfy-line-numbers.nvim', {
+    config = function ()
+      require'smithwebdev.plugins.functional.comfy_line_numbers'
+    end
+  }
+)
+
+--- Navigation Plugins
+--------------------------------------------------------------------------------
 SankofaPlugins.add(
   'https://github.com/nvim-telescope/telescope.nvim', {
     lazy = true,
