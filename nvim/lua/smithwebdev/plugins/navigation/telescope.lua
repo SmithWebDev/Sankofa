@@ -1,12 +1,9 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local Layout = require("telescope.pickers.layout")
-local which_key_status, which_key = pcall(require, 'which-key')
-if not which_key_status then 
-  return
-end
+local which_key_ok, which_key = pcall(require, "which-key")
 
-require("telescope").setup({
+telescope.setup({
 	defaults = {
 		--layout_config = { prompt_position = 'bottom' },
 		--layout_strategy = 'horizontal',
@@ -25,6 +22,7 @@ require("telescope").setup({
 				--['<C-h>'] = require('telescope.actions').add_to_qflist,
 				--['<C-a>'] = require('telescope.actions').add_selected_to_qflist,
 				["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["<C-c>"] = require("telescope.actions").close,
 			},
 			["n"] = {
 				--['<c-h>'] = telescope.extensions.send_to_harpoon.actions.send_selected_to_harpoon,
@@ -112,14 +110,15 @@ require("telescope").setup({
 	},
 })
 
-which_key.add({
-  {'<leader>f', desc = "Telescope Find .."}
-})
+if which_key_ok then
+	which_key.add({
+	  {'<leader>f', desc = "Telescope Find .."}
+	})
+end
 
-require("telescope").setup({})
 vim.keymap.set("n", "<leader>ff", function()
 	require("telescope.builtin").find_files()
-	vim.opt.foldenable = false
+	-- vim.opt.foldenable = false
 end, { desc = "Telescope Find Files" })
 
 vim.keymap.set("n", "<leader>fF", function()
