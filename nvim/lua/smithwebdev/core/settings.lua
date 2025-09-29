@@ -27,7 +27,7 @@ vim.opt.foldenable = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
-vim.opt.smartindent = true
+-- vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.smarttab = true
 vim.opt.softtabstop = 2
@@ -91,7 +91,3 @@ vim.opt.splitkeep = "screen"
 if vim.fn.has("nvim-0.9.0") == 1 then
 	vim.opt.shortmess:append({ C = true })
 end
-
---vim.cmd.colorscheme 'oxocarbon-lua'
---vim.cmd 'colorscheme tokyonight'
-
