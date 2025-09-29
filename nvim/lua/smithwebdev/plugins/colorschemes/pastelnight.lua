@@ -1,6 +1,7 @@
 require("pastelnight").setup({
   --- The theme comes in two styles, `default` and `highContrast`.
-  style = "default",
+  -- style = "default",
+  style = "highContrast",
 
   --- Enable this to disable setting the background color.
   transparent = false,

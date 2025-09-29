@@ -4,6 +4,7 @@ SankofaPlugins.add(
   "https://github.com/rebelot/kanagawa.nvim", {
     config = function()
       require'smithwebdev.plugins.colorschemes.kanagawa'
+      -- vim.cmd[[colorscheme kanagawa]]
     end
   }
 )
@@ -12,20 +13,18 @@ SankofaPlugins.add(
   'https://github.com/pauchiner/pastelnight.nvim', {
     config = function()
       require'smithwebdev.plugins.colorschemes.pastelnight'
+      -- vim.cmd[[colorscheme pastelnight]]
     end
   }
 )
 
 SankofaPlugins.add(
-  'https://github.com/numToStr/Sakura.nvim', {
-  }
-)
-
-SankofaPlugins.add(
   'https://github.com/hyperb1iss/silkcircuit-nvim', {
-    -- priority = 1000,
+    lazy = false,
+    priority = 1000,
     config = function()
       require'smithwebdev.plugins.colorschemes.silkcircuit'
+      -- vim.cmd[[colorscheme silkcircuit]]
     end
   }
 )
@@ -34,6 +33,11 @@ SankofaPlugins.add(
   'https://github.com/folke/tokyonight.nvim', {
     config = function()
       require'smithwebdev.plugins.colorschemes.tokyonight'
+      -- vim.cmd[[colorscheme tokyonight]]
+      vim.cmd[[colorscheme tokyonight-night]]
+      -- vim.cmd[[colorscheme tokyonight-storm]]
+      -- vim.cmd[[colorscheme tokyonight-day]]
+      -- vim.cmd[[colorscheme tokyonight-moon ]]
     end
   }
 )

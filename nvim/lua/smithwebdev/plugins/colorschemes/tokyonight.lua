@@ -2,7 +2,7 @@ require('tokyonight').setup({
   dim_inactive = true,
   style = "night",
   light_style = "day",
-  style = {
+  styles = {
     comments = { italic = true },
     keywords = { italic = true },
     floats = 'dark',
