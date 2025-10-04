@@ -123,7 +123,7 @@ end, { desc = "Telescope Find Files" })
 
 vim.keymap.set("n", "<leader>fF", function()
 	require("telescope.builtin").find_files({ hidden = true })
-end, { desc = "", silent = true, noremap = true })
+end, { desc = "Telescope Find Files (Hidden)", silent = true, noremap = true })
 
 vim.keymap.set("n", "<leader>fg", function()
 	require("telescope.builtin").live_grep()
