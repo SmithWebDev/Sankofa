@@ -18,12 +18,10 @@ ls.config.setup({
 	},
 })
 
-require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/smithwebdev/snippets" })
-require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/smithwebdev/utilities/snippets/" })
+-- require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/smithwebdev/snippets" })
+require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/lua/smithwebdev/snippets"})
 require("luasnip.loaders.from_snipmate").lazy_load()
-require('luasnip.loaders.from_vscode').lazy_load({
-  paths = { "~/.config/nvim/lua/smithwebdev/snippets/vscode"}
-})
+require('luasnip.loaders.from_vscode').lazy_load({ paths = vim.fn.stdpath("config") .. "/lua/smithwebdev/snippets/vscode"})
 
 -- ls.filetype_extend("all", { '_' })
 ls.filetype_extend("eruby", { "html", "ruby" })
