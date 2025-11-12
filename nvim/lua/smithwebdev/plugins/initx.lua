@@ -1,44 +1,5 @@
 -- --- Colorschemes Plugins
 -- --------------------------------------------------------------------------------
--- SankofaPlugins.add(
---   'https://github.com/pauchiner/pastelnight.nvim', {
---     config = function()
---       require'smithwebdev.plugins.colorschemes.pastelnight'
---     end
---   }
--- )
---
--- SankofaPlugins.add(
---   'https://github.com/folke/tokyonight.nvim', {
---     config = function()
---       require'smithwebdev.plugins.colorschemes.tokyonight'
---     end
---   }
--- )
---
--- SankofaPlugins.add(
---   'https://github.com/numToStr/Sakura.nvim', {
---   }
--- )
---
-SankofaPlugins.add(
-  'https://github.com/hyperb1iss/silkcircuit-nvim', {
-    -- priority = 1000,
-    config = function()
-      require'smithwebdev.plugins.colorschemes.silkcircuit'
-      vim.cmd[[colorscheme silkcircuit]]
-    end
-  }
-)
-
--- SankofaPlugins.add(
---   'https://github.com/V4N1LLA-1CE/xcodedark.nvim', {
---     config = function()
---       require'smithwebdev.plugins.colorschemes.xcodedark'
---     end
---   }
--- )
-
 -- --- Completion & Snippets
 -- --------------------------------------------------------------------------------
 -- SankofaPlugins.add(
@@ -228,16 +189,16 @@ SankofaPlugins.add(
 --   }
 -- )
 --
-SankofaPlugins.add(
-  'https://github.com/markgandolfo/lightswitch.nvim',{
-    dependencies = SankofaPlugins.deps_from_urls({
-      'https://github.com/MunifTanjim/nui.nvim'
-    }),
-    config = function()
-      require'smithwebdev.plugins.functional.lightswitch'
-    end
-  }
-)
+-- SankofaPlugins.add(
+--   'https://github.com/markgandolfo/lightswitch.nvim',{
+--     dependencies = SankofaPlugins.deps_from_urls({
+--       'https://github.com/MunifTanjim/nui.nvim'
+--     }),
+--     config = function()
+--       require'smithwebdev.plugins.functional.lightswitch'
+--     end
+--   }
+-- )
 
 -- --- Language Server Plugins
 -- --------------------------------------------------------------------------------

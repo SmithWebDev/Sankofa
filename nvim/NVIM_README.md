@@ -3,7 +3,7 @@
 
 ## Keybind Philosophy
 - __Leader Key <Space>__ is used for extending functionality similar to togglable items found in most IDEs
-- __Secondary Leader Key <Space><Space>__ is used for language commands typically used in various frameworks
+- __Secondary Leader Key <Space><Space>__ is used for language commands typically used for various frameworks
 - __Meta Key__ is used for simple bindings for internal commands
 - does not include the typical localleader at this time
 
