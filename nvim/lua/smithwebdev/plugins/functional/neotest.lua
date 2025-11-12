@@ -7,7 +7,7 @@ neotest.setup({
       -- Let dedicated adapters handle their langs
       ignore_file_types = { "vim", "lua", "ruby" },
     }),
-    require("neotest-minitest"),
+    -- require("neotest-minitest"),
     require("neotest-rspec"),
   },
 
