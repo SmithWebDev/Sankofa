@@ -2,6 +2,7 @@ require('snacks').setup({
   bigfile = { enabled = false },
   dashboard = { enabled = false },
   explorer = { enabled = false },
+  gh = { enabled = false },
   indent = { enabled = false },
   input = { enabled = false },
   picker = { enabled = false },
