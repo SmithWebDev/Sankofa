@@ -26,7 +26,7 @@ end
 -- Determine project Lua root (assumes cwd is project root)
 local function get_project_lua_root()
   -- You could make this smarter with LSP or rooter detection
-  return vim.fn.getcwd() .. "/nvim/lua"
+  return vim.fn.getcwd() .. "/lua"
 end
 
 -- Ensure all parent directories exist (recursive creation)
