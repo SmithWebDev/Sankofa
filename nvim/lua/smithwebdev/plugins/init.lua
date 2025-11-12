@@ -50,6 +50,59 @@ SankofaPlugins.add(
   }
 )
 
+--- Completion & Snippets
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  'https://github.com/Saghen/blink.cmp', {
+    build = 'cargo build --release',
+    dependencies = SankofaPlugins.deps_from_urls({
+      'https://github.com/L3MON4D3/LuaSnip',
+      'https://github.com/honza/vim-snippets',
+      'https://github.com/rafamadriz/friendly-snippets'
+    }),
+    config = function()
+      require 'smithwebdev.plugins.completion_snippets.blink_cmp'
+    end
+  }
+)
+
+SankofaPlugins.add(
+  'https://github.com/mattn/emmet-vim', {
+    init = function()
+      vim.g.user_emmet_leader_key = '<Tab>,'
+      vim.g.user_emmet_settings = {
+        javascript = {
+          attribute = {
+            { ['for'] = 'htmlFor' },
+            { ['class'] = 'className' },
+          },
+          extends = 'jsx',
+          ['erb'] = {
+            { extends = 'html' },
+          },
+        },
+        typescript = {
+          extends = 'tsx',
+        },
+        eruby = {
+          extends = 'html',
+        },
+      }
+      vim.g.user_emmet_mode = 'inv'
+    end
+  }
+)
+
+SankofaPlugins.add(
+  'https://github.com/L3MON4D3/LuaSnip', {
+    build = 'make install_jsregexp',
+    version = 'v2.*',
+    config = function()
+      require('smithwebdev.plugins.completion_snippets.luasnip')
+    end,
+  }
+)
+
 --- Functional Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
@@ -112,11 +165,11 @@ SankofaPlugins.add(
       'https://github.com/nvim-mini/mini.icons'
     }),
     keys = {
-      {'<leader>fy'},
-      {'<leader>e'}
+      { '<leader>fy' },
+      { '<leader>e' }
     },
     config = function()
-      require'smithwebdev.plugins.navigation.fyler'
+      require 'smithwebdev.plugins.navigation.fyler'
     end
   }
 )
@@ -125,12 +178,15 @@ SankofaPlugins.add(
   'https://github.com/nvim-telescope/telescope.nvim', {
     lazy = true,
     keys = {
-      {'<leader>ff'},
-      {'<leader>fF'},
-      {'<leader>fg'},
+      { '<leader>ff' },
+      { '<leader>fF' },
+      { '<leader>fg' },
     },
+    dependencies = SankofaPlugins.deps_from_urls({
+      'https://github.com/nvim-lua/plenary.nvim'
+    }),
     config = function()
-      require'smithwebdev.plugins.navigation.telescope'
+      require 'smithwebdev.plugins.navigation.telescope'
     end
   }
 )
@@ -140,7 +196,7 @@ SankofaPlugins.add(
 SankofaPlugins.add(
   'https://github.com/jaimecgomezz/here.term', {
     config = function()
-      require'smithwebdev.plugins.terminal.here_term'
+      require 'smithwebdev.plugins.terminal.here_term'
     end
   }
 )
@@ -148,12 +204,30 @@ SankofaPlugins.add(
 --- TUI Integration
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
-  'https://github.com/kdheepak/lazygit.nvim', {
-    keys = { '<leader>gl' },
-    lazy = true,
+  "https://github.com/ahkohd/difft.nvim", {
     config = function()
-      vim.keymap.set('n', '<leader>gl', '<cmd>LazyGit<cr>', {desc = 'LazyGit'})
+      require 'smithwebdev.plugins.terminal.difft'
     end
   }
 )
 
+SankofaPlugins.add(
+  'https://github.com/kdheepak/lazygit.nvim', {
+    keys = { '<leader>gl' },
+    lazy = true,
+    config = function()
+      vim.keymap.set('n', '<leader>gl', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
+    end
+  }
+)
+
+SankofaPlugins.add(
+  'https://github.com/nomad/nomad', {
+    version = '*',
+    build = function()
+      ---@type nomad.neovim.build
+      local build = require'nomad.neovim.build'
+      build.builders.download_prebuilt():build(build.contexts.lazy())
+    end
+  }
+)
