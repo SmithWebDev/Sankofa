@@ -47,8 +47,26 @@ vim.keymap.set("n", "<leader><CR>", ":noh<CR>", { desc = "Disable Highlights", s
 
 --[[ Jump and Insert ]]
 --------------------------------------------------------------
-vim.keymap.set("i", "<C-l>", "<C-o>A", { desc = "Jump to end of line and Insert", silent = true })
-vim.keymap.set("i", "<C-h>", "<C-o>I", { desc = "Jump to beginning of line and Insert", silent = true })
+-- vim.keymap.set("i", "<C-l>", "<C-o>A", { desc = "Jump to end of line and Insert", silent = true })
+-- vim.keymap.set("i", "<C-h>", "<C-o>I", { desc = "Jump to beginning of line and Insert", silent = true })
+vim.keymap.set("i", "<C-l>", function()
+  local ok, ls = pcall(require, "luasnip")
+  if ok and ls.choice_active() then
+    ls.change_choice(1)
+  else
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-o>A", true, false, true), "n", true)
+  end
+end, { desc = "Choice next or jump to end", silent = true })
+
+vim.keymap.set("i", "<C-h>", function()
+  local ok, ls = pcall(require, "luasnip")
+  if ok and ls.choice_active() then
+    ls.change_choice(-1)
+  else
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-o>I", true, false, true), "n", true)
+  end
+end, { desc = "Choice prev or jump to start", silent = true })
+
 
 --[[ Move Lines ]]
 --------------------------------------------------------------
@@ -170,9 +188,9 @@ local keybinds = require('smithwebdev.core.utils.go_to_file')
 vim.keymap.set('n', '<leader>gf', function()
   keybinds.go_to_file()
 end, {
-desc = 'Go to file (smart create)',
-noremap = true,
-silent = true
-})
+    desc = 'Go to file (smart create)',
+    noremap = true,
+    silent = true
+  })
 
 
