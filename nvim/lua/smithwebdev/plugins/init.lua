@@ -24,7 +24,7 @@ SankofaPlugins.add(
     priority = 1000,
     config = function()
       require 'smithwebdev.plugins.colorschemes.silkcircuit'
-      -- vim.cmd[[colorscheme silkcircuit]]
+      vim.cmd[[colorscheme silkcircuit]]
     end
   }
 )
@@ -45,7 +45,7 @@ SankofaPlugins.add(
 SankofaPlugins.add(
   'https://github.com/ianklapouch/wildberries.nvim', {
     config = function()
-      vim.cmd[[colorscheme wildberries]]
+      -- vim.cmd[[colorscheme wildberries]]
     end
   }
 )
