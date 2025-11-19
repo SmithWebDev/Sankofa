@@ -6,6 +6,23 @@ local blink = require("blink.cmp")
 
 blink.setup({
   completion = {
+    keyword = {
+      range = "prefix",
+    },
+    accept = {
+      auto_brackets = {
+        enabled = true,
+      },
+    },
+    menu = {
+      auto_show = false,
+      draw = {
+        columns = {
+          { "label", "label_description", gap = 1 },
+          { "kind_icon", "kind" }
+        },
+      },
+    },
     trigger = {
       show_on_keyword = true,
       show_on_insert = true,
