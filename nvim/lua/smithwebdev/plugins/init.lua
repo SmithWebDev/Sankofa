@@ -139,6 +139,22 @@ SankofaPlugins.add(
   }
 )
 
+-- Code runner plugin for neovim written in Lua & Rust. Aims to provide
+-- stupidly fast partial code testing for interpreted and compiled languages.
+SankofaPlugins.add(
+  "https://github.com/michaelb/sniprun", {
+    build = "sh install.sh",
+  }
+)
+
+SankofaPlugins.add(
+  "https://github.com/tpope/vim-surround", {
+    config = function()
+      require 'smithwebdev.plugins.functional.vim_surround'
+    end
+  }
+)
+
 SankofaPlugins.add(
   'https://github.com/folke/which-key.nvim', {
     config = function()
@@ -187,6 +203,16 @@ SankofaPlugins.add(
     }),
     config = function()
       require 'smithwebdev.plugins.navigation.telescope'
+    end
+  }
+)
+
+--- Plugin Packages
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/folke/snacks.nvim", {
+    config = function()
+      require 'smithwebdev.plugins.packages.snacks'
     end
   }
 )

@@ -4,7 +4,7 @@
 ## Keybind Philosophy
 - __Leader Key <Space>__ is used for extending functionality similar to togglable items found in most IDEs
 - __Secondary Leader Key <Space><Space>__ is used for language commands typically used for various frameworks
-- __Meta Key__ is used for simple bindings for internal commands
+- __Meta Key__ <M- > is used for simple bindings for internal commands
 - does not include the typical localleader at this time
 
 
@@ -18,15 +18,17 @@
 - [xcodedark.nvim](https://github.com/V4N1LLA-1CE/xcodedark.nvim)
 
 ### Completion & Snippets
-- [blink.cmp](https://github.com/Saghen/blink.cmp) - Completion plugin with support for LSPs, cmdline, signature help, and snippets.
+- [blink.cmp](https://github.com/Saghen/blink.cmp) - Completion plugin with support for LSPs, cmdline, signature help, and snippets. *Requires rust nightly*
 - [emmet-vim](https://github.com/mattn/emmet-vim)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet engine that uses lua but also able to read VSCode & Sublime formatted snippets
 
 ### Functional Plugins
+- [comfy-line-numbers](https://github.com/mluders/comfy-line-numbers.nvim)
 - [lightswitch.nvim](https://github.com/markgandolfo/lightswitch.nvim) - A simple and elegant Neovim plugin that provides a UI for toggling various options.
   - [nui.nvim](https://github.com/MunifTanjim/nui.nvim) - Component library for Neovim
 
 ### Language Server Plugins
+- [checkmate.nvim](https://github.com/bngarren/checkmate.nvim) - a Markdown-based todo/task plugin
 - [mason.nvim](https://github.com/mason-org/mason.nvim)
   - [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim)
   - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)

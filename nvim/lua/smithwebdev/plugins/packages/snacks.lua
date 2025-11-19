@@ -1,16 +1,20 @@
 require('snacks').setup({
   bigfile = { enabled = false },
+  bufdelete = {enabled = false },
   dashboard = { enabled = false },
+  dim = { enabled = false },
   explorer = { enabled = false },
   gh = { enabled = false },
   indent = { enabled = false },
   input = { enabled = false },
+  layout = { enabled = false },
   picker = { enabled = false },
   notifier = { enabled = false },
   quickfile = { enabled = false },
   scope = { enabled = false },
   scroll = { enabled = false },
   statuscolumn = { enabled = false },
+  terminal = { enabled = false },
   words = { enabled = false },
 })
 
