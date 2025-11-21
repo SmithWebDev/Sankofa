@@ -49,7 +49,7 @@ vim.keymap.set("n", "<leader><CR>", ":noh<CR>", { desc = "Disable Highlights", s
 --------------------------------------------------------------
 -- vim.keymap.set("i", "<C-l>", "<C-o>A", { desc = "Jump to end of line and Insert", silent = true })
 -- vim.keymap.set("i", "<C-h>", "<C-o>I", { desc = "Jump to beginning of line and Insert", silent = true })
-vim.keymap.set("i", "<C-l>", function()
+vim.keymap.set({"i", "s"}, "<C-l>", function()
   local ok, ls = pcall(require, "luasnip")
   if ok and ls.choice_active() then
     ls.change_choice(1)
@@ -58,7 +58,7 @@ vim.keymap.set("i", "<C-l>", function()
   end
 end, { desc = "Choice next or jump to end", silent = true })
 
-vim.keymap.set("i", "<C-h>", function()
+vim.keymap.set({"i", "s"}, "<C-h>", function()
   local ok, ls = pcall(require, "luasnip")
   if ok and ls.choice_active() then
     ls.change_choice(-1)
@@ -152,10 +152,10 @@ vim.keymap.set("n", "<leader>Q", ":qa!<CR>", { desc = "Window Close", silent = t
 
 --[[ Better movement between windows ]]
 -----------------------------------------
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Go to the left window", silent = true })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Go to the right window", silent = true })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Go to the bottom window", silent = true })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Go to the top window", silent = true })
+-- vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Go to the left window", silent = true })
+-- vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Go to the right window", silent = true })
+-- vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Go to the bottom window", silent = true })
+-- vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Go to the top window", silent = true })
 
 --[[ QoL ]]
 vim.keymap.set("n", "<C-i>", "<C-i>", { desc = "", silent = true, noremap = true })
