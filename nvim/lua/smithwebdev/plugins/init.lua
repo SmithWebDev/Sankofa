@@ -166,6 +166,20 @@ SankofaPlugins.add(
 --- Language Server Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/williamboman/mason.nvim", {
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/neovim/nvim-lspconfig",
+      "https://github.com/williamboman/mason-lspconfig.nvim",
+      "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+    }),
+    config = function()
+      require'smithwebdev.plugins.lsp.mason'
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/bngarren/checkmate.nvim", {
     config = function()
       -- require('smithwebdev.plugins.functional.checkmate')
