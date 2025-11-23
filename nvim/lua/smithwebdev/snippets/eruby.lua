@@ -44,11 +44,11 @@ return {
       c(4, {
         t(""),
         { i(1) },
-        { t(", data: { turbo_frame: "), i(1), t(")}") },
-        { t(", data: { turbo_frame: dom_id("), i(1), t(")}") },
-        { t(", data: { turbo_method: dom_id("), i(1), t(")}") },
-        { t(", data: { turbo_method: :delete") },
-        { t(", data: { turbo_method: :delete, turbo_confirm: '"), i(1), t("'}") },
+        { t(", data: { turbo_frame: "), i(1), t(")} ") },
+        { t(", data: { turbo_frame: dom_id("), i(1), t(")} ") },
+        { t(", data: { turbo_method: dom_id("), i(1), t(")} ") },
+        { t(", data: { turbo_method: :delete} ") },
+        { t(", data: { turbo_method: :delete, turbo_confirm: '"), i(1), t("'} ") },
         { t("method: :delete") },
       }),
     })

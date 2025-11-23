@@ -94,8 +94,8 @@ return {
 		{ trig = "prm", name = "Controller Params method", dscr = "Params private method" },
 		fmt(
 			[[
-      def {}_params
-  params.require(:{}).permit(:{})
+  def {}_params
+    params.require(:{}).permit(:{})
   end
   ]],
 			{
