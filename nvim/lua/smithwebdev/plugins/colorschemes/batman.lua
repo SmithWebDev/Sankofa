@@ -1,9 +1,9 @@
 require('batman').setup({
   -- Theme selection
-  theme = "Mr. Freeze", -- Default theme theme will go back to this theme when running :BatmanRestore
+  -- theme = "", -- Default theme theme will go back to this theme when running :BatmanRestore
   randomizer = false, -- Randomize theme on every startup
   use_persistence = true, -- Persist themes Picked with :Batman [theme] or :BatmanPreview"
-
+  --
   -- Background options
   transparent_background = false,
   -- Style overrides
@@ -66,11 +66,11 @@ require('batman').setup({
   color_overrides = {}, -- Override specific colors
   custom_highlights = {}, -- Custom highlight groups
 
-  -- Filetype-specific themes
-  theme_per_file_type = {
-    python = "",    -- xx theme for Python files
-    javascript = "",     -- xx theme for JavaScript
-    markdown = "",      -- xx theme for Markdown
-    lua = "",           -- xx theme for Lua files
-  },
+  -- -- Filetype-specific themes
+  -- theme_per_file_type = {
+  --   python = "",    -- xx theme for Python files
+  --   javascript = "",     -- xx theme for JavaScript
+  --   markdown = "",      -- xx theme for Markdown
+  --   lua = "",           -- xx theme for Lua files
+  -- },
 })
