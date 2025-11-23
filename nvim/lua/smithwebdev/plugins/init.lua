@@ -1,6 +1,15 @@
 --- Colorschemes Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/the-coding-doggo/batman.nvim", {
+    config = function ()
+      require('smithwebdev.plugins.colorschemes.batman')
+      vim.cmd[[colorscheme batman]]
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/rebelot/kanagawa.nvim", {
     config = function()
       require 'smithwebdev.plugins.colorschemes.kanagawa'
@@ -24,7 +33,7 @@ SankofaPlugins.add(
     priority = 1000,
     config = function()
       require 'smithwebdev.plugins.colorschemes.silkcircuit'
-      vim.cmd[[colorscheme silkcircuit]]
+      -- vim.cmd[[colorscheme silkcircuit]]
     end
   }
 )
