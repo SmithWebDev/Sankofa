@@ -157,6 +157,11 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/junegunn/vim-easy-align", {
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/tpope/vim-surround", {
     config = function()
       require 'smithwebdev.plugins.functional.vim_surround'
