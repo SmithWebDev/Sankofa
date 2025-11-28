@@ -185,7 +185,7 @@ vim.keymap.set("n", "<leader><leader>ct", ":!touch<Space>", { desc = "Touch cli 
 --[[---------------------------------------]]--
 
 local keybinds = require('smithwebdev.core.utils.go_to_file')
-vim.keymap.set('n', '<leader>gf', function()
+vim.keymap.set('n', '<leader>gg', function()
   keybinds.go_to_file()
 end, {
     desc = 'Go to file (smart create)',
