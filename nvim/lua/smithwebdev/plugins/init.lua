@@ -2,9 +2,9 @@
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
   "https://github.com/the-coding-doggo/batman.nvim", {
-    config = function ()
+    config = function()
       require('smithwebdev.plugins.colorschemes.batman')
-      vim.cmd[[colorscheme batman]]
+      vim.cmd [[colorscheme batman]]
     end
   }
 )
@@ -180,6 +180,14 @@ SankofaPlugins.add(
 --- Language Server Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/smithwebdev/lsp-lens.nvim", {
+    config = function()
+      require 'smithwebdev.plugins.lsp.lsp_lens'
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/williamboman/mason.nvim", {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = SankofaPlugins.deps_from_urls({
@@ -188,7 +196,7 @@ SankofaPlugins.add(
       "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     }),
     config = function()
-      require'smithwebdev.plugins.lsp.mason'
+      require 'smithwebdev.plugins.lsp.mason'
     end
   }
 )
@@ -280,7 +288,7 @@ SankofaPlugins.add(
     version = '*',
     build = function()
       ---@type nomad.neovim.build
-      local build = require'nomad.neovim.build'
+      local build = require 'nomad.neovim.build'
       build.builders.download_prebuilt():build(build.contexts.lazy())
     end
   }
