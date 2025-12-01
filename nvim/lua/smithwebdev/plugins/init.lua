@@ -115,9 +115,28 @@ SankofaPlugins.add(
 --- Functional Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
+  "https://github.com/bngarren/checkmate.nvim", {
+    config = function()
+      -- require('smithwebdev.plugins.functional.checkmate')
+    end
+  }
+)
+
+SankofaPlugins.add(
   'https://github.com/mluders/comfy-line-numbers.nvim', {
     config = function()
       require 'smithwebdev.plugins.functional.comfy_line_numbers'
+    end
+  }
+)
+
+SankofaPlugins.add(
+  "https://github.com/SmithWebDev/mind.nvim", {
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/nvim-lua/plenary.nvim"
+    }),
+    config = function()
+      require('smithwebdev.plugins.functional.mind')
     end
   }
 )
@@ -197,14 +216,6 @@ SankofaPlugins.add(
     }),
     config = function()
       require 'smithwebdev.plugins.lsp.mason'
-    end
-  }
-)
-
-SankofaPlugins.add(
-  "https://github.com/bngarren/checkmate.nvim", {
-    config = function()
-      -- require('smithwebdev.plugins.functional.checkmate')
     end
   }
 )
