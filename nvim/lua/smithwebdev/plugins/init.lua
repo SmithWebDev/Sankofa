@@ -132,9 +132,7 @@ SankofaPlugins.add(
 
 SankofaPlugins.add(
   "https://github.com/SmithWebDev/mind.nvim", {
-    dependencies = SankofaPlugins.deps_from_urls({
-      "https://github.com/nvim-lua/plenary.nvim"
-    }),
+    dependencies = SankofaPlugins.deps_from_urls("https://github.com/nvim-lua/plenary.nvim"),
     config = function()
       require('smithwebdev.plugins.functional.mind')
     end
@@ -149,6 +147,11 @@ SankofaPlugins.add(
     end
   }
 )
+
+SankofaPlugins.add(
+  "https://github.com/gosvig123/nvim-codebase-mindmap", {
+    SankofaPlugins.deps_from_urls("https://github.com/neovim/nvim-lspconfig")
+  })
 
 SankofaPlugins.add(
   'https://github.com/nvim-treesitter/nvim-treesitter', {
@@ -224,9 +227,7 @@ SankofaPlugins.add(
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
   'https://github.com/A7Lavinraj/fyler.nvim', {
-    dependencies = SankofaPlugins.deps_from_urls({
-      'https://github.com/nvim-mini/mini.icons'
-    }),
+    dependencies = SankofaPlugins.deps_from_urls('https://github.com/nvim-mini/mini.icons'),
     keys = {
       { '<leader>fy' },
       { '<leader>e' }
@@ -245,9 +246,7 @@ SankofaPlugins.add(
       { '<leader>fF' },
       { '<leader>fg' },
     },
-    dependencies = SankofaPlugins.deps_from_urls({
-      'https://github.com/nvim-lua/plenary.nvim'
-    }),
+    dependencies = SankofaPlugins.deps_from_urls('https://github.com/nvim-lua/plenary.nvim'),
     config = function()
       require 'smithwebdev.plugins.navigation.telescope'
     end

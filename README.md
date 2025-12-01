@@ -3,4 +3,9 @@
 
 
 ### Goal:
-A clean, concise Neovim configuration that is easily extensible using various techniques learned since beginning my Vim/Neovim journey.
+A clean, concise Neovim configuration that is easily extensible using various techniques learned since beginning my Vim/Neovim journey.  
+
+
+
+TODO
+Checkmate <-> Mind <-> Obsidian
