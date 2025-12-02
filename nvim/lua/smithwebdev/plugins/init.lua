@@ -132,6 +132,7 @@ SankofaPlugins.add(
 
 SankofaPlugins.add(
   "https://github.com/SmithWebDev/mind.nvim", {
+    branch = {},
     dependencies = SankofaPlugins.deps_from_urls("https://github.com/nvim-lua/plenary.nvim"),
     config = function()
       require('smithwebdev.plugins.functional.mind')
@@ -150,8 +151,12 @@ SankofaPlugins.add(
 
 SankofaPlugins.add(
   "https://github.com/gosvig123/nvim-codebase-mindmap", {
-    SankofaPlugins.deps_from_urls("https://github.com/neovim/nvim-lspconfig")
-  })
+    -- SankofaPlugins.deps_from_urls("https://github.com/neovim/nvim-lspconfig"),
+    config = function ()
+      require('smithwebdev.plugins.functional.codebase_mindmap')
+    end
+  }
+)
 
 SankofaPlugins.add(
   'https://github.com/nvim-treesitter/nvim-treesitter', {
