@@ -228,6 +228,22 @@ SankofaPlugins.add(
   }
 )
 
+SankofaPlugins.add(
+  "https://github.com/erlingur/vim-rails",{
+    dependencies = SankofaPlugins.deps_from_urls({
+      "https://github.com/christoomey/vim-rfactory",
+      -- "https://github.com/tpope/vim-endwise",
+      -- "https://github.com/tpope/vim-dispatch",
+      "https://github.com/tpope/vim-bundler",
+      -- "https://github.com/tpope/vim-projectionist",
+      "https://github.com/SmithWebDev/vim-blockle",
+    }),
+    config = function()
+      require('smithwebdev.plugins.languages.rails')
+    end
+  }
+)
+
 --- Navigation Plugins
 --------------------------------------------------------------------------------
 SankofaPlugins.add(

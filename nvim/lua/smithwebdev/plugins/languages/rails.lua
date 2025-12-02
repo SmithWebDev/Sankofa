@@ -159,8 +159,8 @@ vim.keymap.set("n", "<leader><leader>rDs",    ":Destroy stimulus<Space>",       
 -- ViewComponents
 vim.keymap.set("n", "<leader><leader>rgvc",   ":Generate component<Space>",                       { desc = "Rails Generate View Component",                 silent = true })
 
-local rails_commands = require("ror.commands")
-vim.keymap.set("n", "<leader><leader>R",      rails_commands.list_commands,                       { desc = "List of Rails Commands",                        silent = true })
+-- local rails_commands = require("ror.commands")
+-- vim.keymap.set("n", "<leader><leader>R",      rails_commands.list_commands,                       { desc = "List of Rails Commands",                        silent = true })
 
 -- :Rfactory	:edit the file
 -- :RSfactory	:split the file
