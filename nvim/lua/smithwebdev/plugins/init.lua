@@ -132,7 +132,7 @@ SankofaPlugins.add(
 
 SankofaPlugins.add(
   "https://github.com/SmithWebDev/mind.nvim", {
-    branch = {},
+    branch = 'Path_Titles',
     dependencies = SankofaPlugins.deps_from_urls("https://github.com/nvim-lua/plenary.nvim"),
     config = function()
       require('smithwebdev.plugins.functional.mind')

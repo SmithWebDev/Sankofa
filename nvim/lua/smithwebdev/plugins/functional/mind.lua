@@ -3,9 +3,6 @@ require('mind').setup({
     state_path = "~/Evolution/Brain/mind.nvim/mind.json",
     data_dir = "~/Evolution/Brain/mind.nvim/data"
   },
-  ui = {
-    width = 30,
-  },
   normal = {
     ["<cr>"] = "open_data",
     ["<s-cr>"] = "open_data_index",
@@ -42,11 +39,11 @@ require('mind').setup({
 })
 
 -- TODO: Keymap Strategy
--- vim.keymap.set('n', '<Tab>mP', ':MindOpenMain<CR>',         { desc = 'Open the main Mind tree. ', silent = true })
--- vim.keymap.set('n', '<Tab>mp', ':MindOpenProject<CR>',      { desc = 'Open the project tree. ', silent = true })
--- vim.keymap.set('n', '<Tab>ms', ':MindOpenSmartProject<CR>', { desc = ' open the project tree, either local, global, or prompt the user for which kind of project tree to create ', silent = true })
--- vim.keymap.set('n', '<Tab>mr', ':MindReloadState<CR>',      { desc = ' Reload Mind state for global and local trees. ', silent = true })
--- vim.keymap.set('n', '<Tab>mc', ':MindClose<CR>',            { desc = ' Close project or main mind tree if open. Resets ui cache. ', silent = true })
+vim.keymap.set('n', '<leader><leader>mP', ':MindOpenMain<CR>',         { desc = 'Open the main Mind tree. ', silent = true })
+vim.keymap.set('n', '<leader><leader>mp', ':MindOpenProject<CR>',      { desc = 'Open the project tree. ', silent = true })
+vim.keymap.set('n', '<leader><leader>ms', ':MindOpenSmartProject<CR>', { desc = ' open the project tree, either local, global, or prompt the user for which kind of project tree to create ', silent = true })
+vim.keymap.set('n', '<leader><leader>mr', ':MindReloadState<CR>',      { desc = ' Reload Mind state for global and local trees. ', silent = true })
+vim.keymap.set('n', '<leader><leader>mc', ':MindClose<CR>',            { desc = ' Close project or main mind tree if open. Resets ui cache. ', silent = true })
 
 -- vim.keymap.set(
 --   'n',
