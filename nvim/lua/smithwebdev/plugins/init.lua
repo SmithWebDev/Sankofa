@@ -63,7 +63,8 @@ SankofaPlugins.add(
 --------------------------------------------------------------------------------
 SankofaPlugins.add(
   'https://github.com/Saghen/blink.cmp', {
-    build = 'cargo build --release',
+    version = '1.*',
+    -- build = 'cargo build --release',
     dependencies = SankofaPlugins.deps_from_urls({
       'https://github.com/L3MON4D3/LuaSnip',
       'https://github.com/honza/vim-snippets',
