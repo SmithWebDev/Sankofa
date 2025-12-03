@@ -124,6 +124,14 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/nvim-zh/colorful-winsep.nvim", {
+    config = function ()
+      require('smithwebdev.plugins.functional.winsep')
+    end
+  }
+)
+
+SankofaPlugins.add(
   'https://github.com/mluders/comfy-line-numbers.nvim', {
     config = function()
       require 'smithwebdev.plugins.functional.comfy_line_numbers'
