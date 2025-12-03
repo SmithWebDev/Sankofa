@@ -159,6 +159,14 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/rcarriga/nvim-notify", {
+    config = function ()
+      vim.notify = require("notify")
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/gosvig123/nvim-codebase-mindmap", {
     -- SankofaPlugins.deps_from_urls("https://github.com/neovim/nvim-lspconfig"),
     config = function ()
