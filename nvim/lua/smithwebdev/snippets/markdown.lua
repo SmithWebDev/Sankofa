@@ -1,7 +1,5 @@
 print("markdown loaded")
 -- require("smithwebdev.snippets.obsidian")
-require'smithwebdev.snippets.prompts'
-require'smithwebdev.snippets.stories'
 return {
 	-- ------------------------
 	--Markdown Landuage Block--

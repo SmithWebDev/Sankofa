@@ -12,10 +12,15 @@ mason.setup()
 
 mason_lspconfig.setup({
   ensure_installed = {
+    "herb_ls",
     "lua_ls",
     "ruby_lsp",
+    "stimulus_ls",
   },
 })
+
+-- Herb LSP
+vim.lsp.enable("herb_ls")
 
 -- Lua LSP
 vim.lsp.config('lua_ls', {
@@ -34,11 +39,6 @@ vim.lsp.config('lua_ls', {
 vim.lsp.enable("lua_ls")
 
 -- Ruby LSP
-local function some_function_name(arg1, arg2, arg3)
-end
-
-
-
 local function add_ruby_deps_command(client, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, "ShowRubyDeps", function(opts)
       local params = vim.lsp.util.make_text_document_params()
@@ -108,10 +108,10 @@ vim.lsp.config("ruby_lsp", {
     add_ruby_deps_command(client, buffer)
   end,
 })
-
-
 vim.lsp.enable("ruby_lsp")
 
+-- Stimulus LSP
+vim.lsp.enable("stimulus_ls")
 
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = '', silent = true, noremap = true })
