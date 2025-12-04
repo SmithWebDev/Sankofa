@@ -1,5 +1,7 @@
 print("markdown loaded")
 -- require("smithwebdev.snippets.obsidian")
+require'smithwebdev.snippets.prompts'
+require'smithwebdev.snippets.stories'
 return {
 	-- ------------------------
 	--Markdown Landuage Block--
@@ -404,4 +406,75 @@ return {
 		name = "Anime link creation",
 		dscr = "Anime shorthand",
 	}, { t("[[Anime - "), i(1), t("|"), rep(1), t("]]") }),
+
+
+
+-- Universal prompt template (long form)
+s({
+  trig = 'unip',
+  name = 'Universal Prompt Template',
+  dscr = 'Universal prompt template (long form)'
+},
+  fmt([[
+You are to act as: {}
+
+GOAL / INTENT:
+- I want you to produce: {}
+- Purpose / why I need this: {}
+
+CONTEXT:
+- Background information: {}
+- Important domain details: {}
+
+REQUIREMENTS (Must-Haves):
+- Include: {}
+- Constraints: {}
+- What to avoid: {}
+
+OUTPUT FORMAT:
+- Format the response as: {}
+- Structure: {}
+
+STYLE & EXAMPLES:
+- Match this tone/style: {}
+- Follow this structure: {}
+
+AUDIENCE:
+- The audience is: {}
+- Level of detail required: {}
+
+BOUNDARIES:
+- Scope is limited to: {}
+- Do NOT include: {}
+
+SUCCESS CRITERIA:
+- A correct response will: {}
+- Must satisfy: {}
+
+CLARIFICATION RULE:
+- If anything is ambiguous, ask clarifying questions *before* producing the final output.
+
+FINAL DELIVERABLE RULE:
+- Produce only the final formatted answer with no preamble.
+]], {
+      i(1, "[role/persona]"),
+      i(2, "[describe deliverable]"),
+      i(3, "[optional but helpful]"),
+      i(4, "[project, scenario, purpose]"),
+      i(5, "[tech stack, concepts, definitions]"),
+      i(6, "[bullet list of necessary items]"),
+      i(7, "[length, tone, depth, perspective]"),
+      i(8, "[no filler, no code, no explanations, etc.]"),
+      i(9, "[bullets, numbered list, sections, code, table, etc.]"),
+      i(10, "[define headings or ordering]"),
+      i(11, "[paste example or describe tone]"),
+      i(12, "[provide structure sample]"),
+      i(13, "[expert, beginner, recruiter, engineer, client]"),
+      i(14, "[high-level, deep technical, etc.]"),
+      i(15, "[specific focus]"),
+      i(16, "[disallowed content]"),
+      i(17, "[define how you will judge accuracy/success]"),
+      i(18, "[explicit acceptance criteria]"),
+    })
+)
 }

@@ -30,12 +30,38 @@ return {
     )
   ),
 
+  -- Plugin call snippet
+  s({
+    trig = 'San',
+    name = 'SankofaPlugins',
+    dscr = 'Plugin call snippet'
+  },
+    fmt([[
+  SankofaPlugins.add(
+    "{}", {{
+    {}
+    }}
+  )
+
+  ]], {
+        i(1),
+        c(2, {
+          {t("SankofaPlugins.deps_from_urls({\n"), i(1), t("})")},
+        })
+        -- c(2, {t([[SankofaPlugins.deps_from_urls({{
+        --       '',
+        --     }})]])}
+        -- )},
+        -- )}
+      })
+  ),
+
   -- Neovim Keybind skeleton
   s({
-      trig = "key",
-      name = "Keybind Skeleton",
-      dscr = "Neovim Keybind skeleton",
-    },
+    trig = "key",
+    name = "Keybind Skeleton",
+    dscr = "Neovim Keybind skeleton",
+  },
     fmt([[vim.keymap.set('{}', '{}', '{}', {{ desc = '{}', silent = true, noremap = true }})]], {
       c(1, {
         t("n"),
@@ -52,10 +78,10 @@ return {
   -- plugin builder
 
   s({
-      trig = 'plugin',
-      name = 'Plugin Builder',
-      dscr = 'plugin building snippet'
-    },
+    trig = 'plugin',
+    name = 'Plugin Builder',
+    dscr = 'plugin building snippet'
+  },
     fmt(
       [[
 
@@ -88,19 +114,19 @@ return {
 
   -- Browse.nvim bookmark creater
   s({
-      trig = 'bookcat',
-      name = 'Bookmark Category',
-      dscr = 'Browse.nvim bookmark creater'
-    },
+    trig = 'bookcat',
+    name = 'Bookmark Category',
+    dscr = 'Browse.nvim bookmark creater'
+  },
     fmt([[
   ['{}'] = {{
      ['name'] = 'Search For {}'
   }}
 
   ]], {
-      i(1),
-      i(2)
-    })
+        i(1),
+        i(2)
+      })
   ),
 
 }
