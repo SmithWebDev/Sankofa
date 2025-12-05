@@ -5,7 +5,7 @@ require('batman').setup({
   use_persistence = true, -- Persist themes Picked with :Batman [theme] or :BatmanPreview"
   --
   -- Background options
-  transparent_background = false,
+  transparent_background = true,
   -- Style overrides
 
   -- Syntax highlighting styles
