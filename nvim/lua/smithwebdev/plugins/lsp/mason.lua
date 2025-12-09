@@ -13,14 +13,19 @@ mason.setup()
 mason_lspconfig.setup({
   ensure_installed = {
     "herb_ls",
+    "html",
     "lua_ls",
     "ruby_lsp",
     "stimulus_ls",
+    "ts_ls",
   },
 })
 
 -- Herb LSP
 vim.lsp.enable("herb_ls")
+
+-- HTML LSP
+vim.lsp.enable("html")
 
 -- Lua LSP
 vim.lsp.config('lua_ls', {
@@ -113,15 +118,18 @@ vim.lsp.enable("ruby_lsp")
 -- Stimulus LSP
 vim.lsp.enable("stimulus_ls")
 
+-- Typescript/Javascript LSP
+vim.lsp.enable("ts_ls")
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = '', silent = true, noremap = true })
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = '', silent = true, noremap = true })
-vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = '', silent = true, noremap = true })
-vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = '', silent = true, noremap = true })
+vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { desc = '', silent = true, noremap = true })
+vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { desc = '', silent = true, noremap = true })
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = '', silent = true, noremap = true })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = '', silent = true, noremap = true })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '', silent = true, noremap = true })
 vim.keymap.set('n', '<leader>lh', function ()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   vim.notify(vim.lsp.inlay_hint.is_enabled() and "Inlay Hints Enabled" or "Inlay Hints Disabled")
 end, { desc = '', silent = true, noremap = true })
+
 
