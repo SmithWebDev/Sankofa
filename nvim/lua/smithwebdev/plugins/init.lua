@@ -240,6 +240,14 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/ErichDonGubler/lsp_lines.nvim", {
+    config = function ()
+      require('smithwebdev.plugins.lsp.lsp_lines')
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/williamboman/mason.nvim", {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = SankofaPlugins.deps_from_urls({

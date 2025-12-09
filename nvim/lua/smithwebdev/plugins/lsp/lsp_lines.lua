@@ -1,0 +1,8 @@
+-- require('lsp_lines').setup()
+--
+-- vim.keymap.set('n', '<leader>ll', require('lsp_lines').toggle, { desc = 'Toggle Lsp Lines', silent = true, noremap = true })
+--
+-- vim.diagnostic.config({
+--   virtual_text = false
+-- })
+--
