@@ -262,6 +262,14 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/folke/trouble.nvim", {
+    config = function ()
+      require'smithwebdev.plugins.lsp.trouble'
+    end
+  }
+)
+
+SankofaPlugins.add(
   "https://github.com/erlingur/vim-rails",{
     dependencies = SankofaPlugins.deps_from_urls({
       "https://github.com/christoomey/vim-rfactory",
