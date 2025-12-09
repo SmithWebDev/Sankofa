@@ -176,6 +176,14 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/SmithWebDev/nvim-colorizer.lua", {
+    config = function()
+      require('colorizer').setup()
+    end
+  }
+)
+
+SankofaPlugins.add(
   'https://github.com/nvim-treesitter/nvim-treesitter', {
     build = ":TSUpdate",
     dependencies = SankofaPlugins.deps_from_urls({
