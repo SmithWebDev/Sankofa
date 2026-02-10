@@ -200,4 +200,4 @@
 --     },
 --   },
 -- }
-require(')
+require('trouble').setup()
