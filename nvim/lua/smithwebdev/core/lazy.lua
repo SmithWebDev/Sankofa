@@ -39,3 +39,5 @@ require'lazy'.setup(
     }
   }
 )
+
+vim.keymap.set('n', '<M-u>', ':Lazy update<CR>', { desc = 'Update plugins', silent = true, noremap = true })
