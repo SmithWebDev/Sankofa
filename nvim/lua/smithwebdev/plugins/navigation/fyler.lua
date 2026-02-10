@@ -15,7 +15,7 @@ require'fyler'.setup({
       close_on_select = true,
       confirm_simple = false,
       default_explorer = true,
-      delete_to_trash = true,
+      delete_to_trash = false,
       git_status = {
         enabled = true,
         symbols = {
@@ -28,11 +28,6 @@ require'fyler'.setup({
           Conflict = "!",
           Ignored = "#",
         },
-      },
-      indentscope = {
-        enabled = true,
-        group = "FylerIndentMarker",
-        marker = "|",
       },
       mappings = {
         ["\\"] = "SelectVSplit",
