@@ -118,14 +118,26 @@ SankofaPlugins.add(
 SankofaPlugins.add(
   "https://github.com/bngarren/checkmate.nvim", {
     config = function()
-      -- require('smithwebdev.plugins.functional.checkmate')
+      require('smithwebdev.plugins.functional.checkmate')
+    end
+  }
+)
+
+SankofaPlugins.add(
+  "https://github.com/esmuellert/codediff.nvim", {
+    SankofaPlugins.deps_from_urls(
+      "https://github.com/MunifTanjim/nui.nvim"
+    ),
+    cmd = "CodeDiff",
+    config = function()
+      require('smithwebdev.plugins.functional.codediff')
     end
   }
 )
 
 SankofaPlugins.add(
   "https://github.com/nvim-zh/colorful-winsep.nvim", {
-    config = function ()
+    config = function()
       require('smithwebdev.plugins.functional.winsep')
     end
   }
@@ -160,7 +172,7 @@ SankofaPlugins.add(
 
 SankofaPlugins.add(
   "https://github.com/rcarriga/nvim-notify", {
-    config = function ()
+    config = function()
       vim.notify = require("notify")
     end
   }
@@ -169,7 +181,7 @@ SankofaPlugins.add(
 SankofaPlugins.add(
   "https://github.com/gosvig123/nvim-codebase-mindmap", {
     -- SankofaPlugins.deps_from_urls("https://github.com/neovim/nvim-lspconfig"),
-    config = function ()
+    config = function()
       require('smithwebdev.plugins.functional.codebase_mindmap')
     end
   }
@@ -184,7 +196,21 @@ SankofaPlugins.add(
 )
 
 SankofaPlugins.add(
+  "https://github.com/neovim-idea/switcher-nvim", {
+    lazy = false,
+    dependencies = SankofaPlugins.deps_from_urls(
+      {
+        "https://github.com/nvim-lua/plenary.nvim",
+        "https://github.com/nvim-tree/nvim-web-devicons"
+      }
+    )
+  }
+)
+
+SankofaPlugins.add(
   'https://github.com/nvim-treesitter/nvim-treesitter', {
+    -- branch = "main",
+    branch = "master",
     build = ":TSUpdate",
     dependencies = SankofaPlugins.deps_from_urls({
       'https://github.com/OXY2DEV/markview.nvim',
@@ -194,6 +220,7 @@ SankofaPlugins.add(
       'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
       'https://github.com/RRethy/nvim-treesitter-textsubjects',
     }),
+    lazy = false,
     config = function()
       require 'smithwebdev.plugins.functional.treesitter'
     end
@@ -266,6 +293,23 @@ SankofaPlugins.add(
     config = function ()
       require'smithwebdev.plugins.lsp.trouble'
     end
+  }
+)
+SankofaPlugins.add(
+  "https://github.com/obsidian-nvim/obsidian.nvim",{
+    version = "*",
+    ft = "markdown",
+    config = function ()
+      require('smithwebdev.plugins.functional.obsidian')
+    end
+  }
+)
+
+--- Language Plugins
+--------------------------------------------------------------------------------
+SankofaPlugins.add(
+  "https://github.com/iamcco/markdown-preview.nvim", {
+
   }
 )
 

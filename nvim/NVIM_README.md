@@ -19,13 +19,15 @@
 
 ### Completion & Snippets
 - [blink.cmp](https://github.com/Saghen/blink.cmp) - Completion plugin with support for LSPs, cmdline, signature help, and snippets. *Requires rust nightly*
-- [emmet-vim](https://github.com/mattn/emmet-vim)
+- [emmet-vim](https://github.com/mattn/emmet-vim) - Provides support for expanding abbreviations similar to [emmet](https://emmet.io/)  
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet engine that uses lua but also able to read VSCode & Sublime formatted snippets
 
 ### Functional Plugins
+- [checkmate.nvim](https://github.com/bngarren/checkmate.nvim) - Markdown-based todo/ task plugin
 - [comfy-line-numbers](https://github.com/mluders/comfy-line-numbers.nvim)
 - [lightswitch.nvim](https://github.com/markgandolfo/lightswitch.nvim) - A simple and elegant Neovim plugin that provides a UI for toggling various options.
   - [nui.nvim](https://github.com/MunifTanjim/nui.nvim) - Component library for Neovim
+- [neovim-idea/switcher-nvim](https://github.com/neovim-idea/switcher-nvim) - JetBrain's file switcher, for neovim 😍 <C-Tab> like a pro and jump between open buffers ❤️
 
 ### Language Server Plugins
 - [checkmate.nvim](https://github.com/bngarren/checkmate.nvim) - a Markdown-based todo/task plugin
